@@ -1,10 +1,14 @@
+import React from 'react'
+import Nav from './Nav'
+import LoginForm from './LoginForm'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Hello </h1>
+      <Nav />
+      <LoginForm />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

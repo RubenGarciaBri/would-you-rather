@@ -1,3 +1,5 @@
+
+
 body {
   box-sizing: border-box;
   padding: 0;
@@ -13,3 +15,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Utility Classes */
+
+.align-center {
+  text-align: center;
+}
+
+
+/* Components */
+
+.nav {
+  margin-bottom: 50px;
+}
+
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login-form__segment {
+  padding: 50px;
+  background-color: red;
+}
+
+
+.ui.segment .login-form__select {
+  width: 100%;
+}
+
