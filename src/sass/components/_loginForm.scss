@@ -1,0 +1,23 @@
+.login-form {
+  padding: 5rem;
+  border-radius: .7rem;
+  max-width: 90rem;
+  margin: 5rem auto 0 auto;
+
+  &__container {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  &__select {
+    width: 100%;
+    font-size: 1.6rem
+  }
+
+  
+}
+
+.ui.button.login-form__btn {
+  margin-top: 1.5rem;
+  width: 100%;
+}

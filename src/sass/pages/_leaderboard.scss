@@ -1,0 +1,13 @@
+.leader-board {
+
+  &__list {
+    width: 65rem;
+    margin: 5rem auto 0 auto;
+  }
+}
+
+h3:first-child.leader-board__title {
+  font-size: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+}

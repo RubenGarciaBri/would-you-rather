@@ -1,46 +1,32 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 
 const Nav = () => {
   return (
-    <div className='nav'>
-      <Container>
-        <Menu pointing secondary>
-          <Menu.Item
-            name='editorials'  
-            as='a'
-          >
-            Editorials
-          </Menu.Item>
-
-          <Menu.Item
-            name='reviews'
-            as='a'        
-          >
-            Reviews
-          </Menu.Item>
-
-          <Menu.Item
-            name='upcomingEvents'       
-            as='a'  
-          >
-            Upcoming Events
-          </Menu.Item>
-          <Menu.Menu position='right'>
-          <Menu.Item as='a'>
-            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-            <span>Username</span>           
-          </Menu.Item>
-              <Menu.Item
-                name='logout'
-                as='a'
-              />
-          </Menu.Menu>
-        </Menu>
-      </Container>
-    </div>
+    <nav className='navbar'>
+      <div className='navbar__container main-container'>
+        <div className='navbar__left'>
+          <ul className='navbar__left-list'>
+            <li className='navbar__left-list__item active'><NavLink to='/home' exact activeClassName='active'>Home</NavLink>
+            </li>
+            <li className='navbar__left-list__item active'><NavLink to='/new' exact activeClassName='active'>Create Poll</NavLink>
+            </li>
+            <li className='navbar__left-list__item active'><NavLink to='/leaderboard' exact activeClassName='active'>Leaderboard</NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className='navbar__right'>
+        <ul className='navbar__right-list'>
+          <li className='navbar__left-list__item'><NavLink to='/' exact>Logout</NavLink>
+          </li>
+        </ul>
+        </div>
+        
+      </div>
+    </nav>
   )
 }
 

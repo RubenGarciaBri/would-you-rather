@@ -1,0 +1,27 @@
+.poll-form {
+  max-width: 70rem;
+  margin: 5rem auto 0 auto;
+  padding: 3rem 4rem;
+  border-radius: 1rem;
+
+  &__form {
+
+    &-span {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    &-or {
+      display: block;
+      font-weight: 800;
+      margin-top: -.5rem;
+      margin-bottom: .9rem;
+    }
+
+  }
+}
+
+.ui.button.poll-form__form-btn {
+  margin-top: .5rem;
+}

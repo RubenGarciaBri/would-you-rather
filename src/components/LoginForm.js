@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container } from 'semantic-ui-react'
-import { Segment } from 'semantic-ui-react'
-import { Select } from 'semantic-ui-react'
+import { Container, Segment, Select, Button } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
 
 const users = [
   {
@@ -38,16 +37,23 @@ const users = [
   },
 ]
 
+
+
 const LoginForm = () => {
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push('/home')
+  }
+
   return (
-    <div className='login-form'>
-      <Container>
-        <Segment as='div' className='login-form__segment align-center'>
-          <h3>Welcome to "Would you Rather"!</h3>
-          <p>Select a user to start using the app</p>
-          <Select className='login-form__select' placeholder='Select user' options={users}/>
-        </Segment>
-      </Container>
+    <div className='login-form align-center shadow-slim'>
+      <div className="login-form__container">
+        <h3>Welcome to "Would you Rather"!</h3>
+        <p>Select a user to start using the app</p>
+        <Select className='login-form__select' placeholder='Select user' options={users}/>
+        <Button className='login-form__btn' onClick={handleClick}>Sign Up</Button>
+      </div>
     </div>    
   )
 }

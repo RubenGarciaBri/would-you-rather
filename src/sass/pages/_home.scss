@@ -1,0 +1,18 @@
+.home-panel {
+  text-align: center;
+  margin-top: 5rem;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+  }
+}
+
+.ui.buttons.home-panel__btn-group {
+  margin-bottom: 5rem;
+}
+
+.ui.button.home-panel__btn-group__btn, .ui.button.home-panel__btn-group__or {
+  font-size: 1.6rem;
+}

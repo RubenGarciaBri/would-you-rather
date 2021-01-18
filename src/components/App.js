@@ -1,12 +1,17 @@
 import React from 'react'
-import Nav from './Nav'
-import LoginForm from './LoginForm'
+import { Route } from 'react-router-dom'
+import Login from '../screens/Login'
+import Home from '../screens/Home'
+import NewPoll from '../screens/NewPoll'
+import Leaderboard from '../screens/Leaderboard'
 
 const App = () => {
   return (
     <div className="App">
-      <Nav />
-      <LoginForm />
+      <Route path='/' exact component={Login}/>
+      <Route path='/home' component={Home}/>
+      <Route path='/new' component={NewPoll}/>
+      <Route path='/leaderboard' component={Leaderboard}/>
     </div>
   )
 }

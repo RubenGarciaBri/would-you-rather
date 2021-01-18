@@ -1,0 +1,26 @@
+// Import files
+
+@import './sass/abstracts/overrides';
+@import './sass/abstracts/functions';
+@import './sass/abstracts/mixins';
+@import './sass/abstracts/variables';
+
+@import './sass/base/animations';
+@import './sass/base/base';
+@import './sass/base/typography';
+@import './sass/base/utilities';
+
+
+@import './sass/components/loginForm';
+@import './sass/components/navbar';
+@import './sass/components/pollForm';
+@import './sass/components/poll';
+@import './sass/components/leadCard';
+
+@import './sass/pages/login';
+@import './sass/pages/leaderboard';
+@import './sass/pages/home';
+@import './sass/pages/newPoll';
+
+
+
