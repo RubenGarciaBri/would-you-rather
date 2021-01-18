@@ -1,7 +1,8 @@
-import React from 'react'
-import { Container, Segment, Select, Button } from 'semantic-ui-react'
+import React, { useState } from 'react'
+import { Select, Button, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { setAuthedUser } from '../actions/authedUser'
 
 const users = [
   {
@@ -40,11 +41,43 @@ const users = [
 
 
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+  const [user, setUser] = useState('')
+  const [submitFailed, setSubmitFailed] = useState(false)
+
+  const { dispatch } = props
+
+  console.log(user)
+  console.log(submitFailed)
+
   let history = useHistory();
 
-  const handleClick = () => {
-    history.push('/home')
+  const handleChange = (e) => { 
+    const target = e.target
+
+    // Get text field from Select element
+    const userName = target.children[1].outerText
+  
+    setUser(userName)
+  }
+
+  const handleClick = (e) => {
+
+    // Validate a user has been selected
+    if (user !== '') {
+
+      // If submit failed previously, change to false
+      if (submitFailed === true) {
+        setSubmitFailed(false)
+      }
+
+      dispatch(setAuthedUser(user))
+
+      history.push('/home')
+
+    } else {
+      setSubmitFailed(true)
+    }
   }
 
   return (
@@ -52,17 +85,21 @@ const LoginForm = () => {
       <div className="login-form__container">
         <h3>Welcome to "Would you Rather"!</h3>
         <p>Select a user to start using the app</p>
-        <Select className='login-form__select' placeholder='Select user' options={users}/>
+        <Select className='login-form__select' placeholder='Select user' options={users} onChange={handleChange}/>
+        {submitFailed === true ?
+          <Message
+          error
+          content='Please select a user before proceeding'
+        /> :
+        null
+        }
         <Button className='login-form__btn' onClick={handleClick}>Sign Up</Button>
       </div>
     </div>    
   )
 }
 
-
-
 function mapStateToProps ({ authedUser }) {
-  console.log(authedUser)
   return {
     authedUser
   }

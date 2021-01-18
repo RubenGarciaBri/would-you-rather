@@ -12,10 +12,11 @@
 
 
 @import './sass/components/loginForm';
-@import './sass/components/navbar';
 @import './sass/components/pollForm';
 @import './sass/components/poll';
 @import './sass/components/leadCard';
+
+@import './sass/layout/navbar';
 
 @import './sass/pages/login';
 @import './sass/pages/leaderboard';

@@ -20,7 +20,11 @@ const Nav = () => {
         </div>
         <div className='navbar__right'>
         <ul className='navbar__right-list'>
-          <li className='navbar__left-list__item'><NavLink to='/' exact>Logout</NavLink>
+          <li className='navbar__right-list__item'>
+            <img src='https://randomuser.me/api/portraits/men/49.jpg' className='navbar__right-list__item-img'/>
+            <span className='navbar__right-list__item-name'>Full Name</span>
+          </li>
+          <li className='navbar__right-list__item'><NavLink to='/' exact>Logout</NavLink>
           </li>
         </ul>
         </div>

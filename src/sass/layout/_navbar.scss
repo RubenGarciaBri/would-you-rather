@@ -71,12 +71,25 @@
       }
 
       &__item {
+        display: flex;
+        align-items: center;
 
         &:not(:last-child) a {
 
           @include respond(tab-port) {
             margin-right: 7px;
           }
+        }
+
+        &-img {
+          width: 3.6rem;
+          border-radius: 50%;
+        }
+
+        &-name {
+          font-weight: 600;
+          display: block;
+          padding: 0 1rem;
         }
 
         & a {
