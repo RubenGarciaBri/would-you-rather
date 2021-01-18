@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Segment, Select, Button } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const users = [
   {
@@ -58,4 +59,13 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+
+
+function mapStateToProps ({ authedUser }) {
+  console.log(authedUser)
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(LoginForm)
