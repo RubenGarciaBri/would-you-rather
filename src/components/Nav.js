@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 
-const Nav = () => {
+const Nav = (props) => {
+  const { authedUser } = props
+
   return (
     <nav className='navbar'>
       <div className='navbar__container main-container'>
@@ -21,8 +24,8 @@ const Nav = () => {
         <div className='navbar__right'>
         <ul className='navbar__right-list'>
           <li className='navbar__right-list__item'>
-            <img src='https://randomuser.me/api/portraits/men/49.jpg' className='navbar__right-list__item-img'/>
-            <span className='navbar__right-list__item-name'>Full Name</span>
+            <img src={authedUser.avatar} className='navbar__right-list__item-img'/>
+            <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
           <li className='navbar__right-list__item'><NavLink to='/' exact>Logout</NavLink>
           </li>
@@ -34,4 +37,10 @@ const Nav = () => {
   )
 }
 
-export default Nav
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(Nav)

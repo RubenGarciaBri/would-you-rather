@@ -43,22 +43,22 @@ const users = [
 
 const LoginForm = (props) => {
   const [user, setUser] = useState('')
+  const [avatar, setAvatar] = useState('')
   const [submitFailed, setSubmitFailed] = useState(false)
 
   const { dispatch } = props
-
-  console.log(user)
-  console.log(submitFailed)
 
   let history = useHistory();
 
   const handleChange = (e) => { 
     const target = e.target
 
-    // Get text field from Select element
-    const userName = target.children[1].outerText
-  
-    setUser(userName)
+    // Get name and avatar from Select element
+    const selectName = target.children[1].outerText
+    const selectAvatar = target.children[0].currentSrc
+
+    setUser(selectName)
+    setAvatar(selectAvatar)
   }
 
   const handleClick = (e) => {
@@ -71,7 +71,7 @@ const LoginForm = (props) => {
         setSubmitFailed(false)
       }
 
-      dispatch(setAuthedUser(user))
+      dispatch(setAuthedUser(user, avatar))
 
       history.push('/home')
 
