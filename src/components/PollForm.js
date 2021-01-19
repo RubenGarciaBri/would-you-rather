@@ -1,23 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Checkbox, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { createPoll } from '../actions/polls'
 
-const PollForm = () => {
+
+const PollForm = ({ dispatch }) => {
+  const [firstQuestion, setFirstQuestion] = useState('')
+  const [secondQuestion, setSecondQuestion] = useState('')
+
+  const handleInputOne = (e) => {
+    setFirstQuestion(e.target.value)
+  }
+
+  const handleInputTwo = (e) => {
+    setSecondQuestion(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    console.log('success!')
+    dispatch(createPoll(firstQuestion, secondQuestion))
+  }
+
   return (
     <div className='poll-form shadow-slim'>
-      <Form className='poll-form__form'>
+      <Form className='poll-form__form' onSubmit={handleSubmit}>
         <span className='poll-form__form-span'>Would you rather...</span>
         <Form.Field>
-          <input placeholder='First question...' />
+          <input placeholder='First question...' onChange={handleInputOne}/>
         </Form.Field>
         <span className='poll-form__form-or'>Or...</span>
-        <Form.Field>
-      
-          <input placeholder='Second question...' />
+        <Form.Field>  
+          <input placeholder='Second question...' onChange={handleInputTwo}/>
         </Form.Field>
-        <Button type='submit' className='poll-form__form-btn'>Create New Poll</Button>
+        <Button type='submit' className='poll-form__form-btn' >Create New Poll</Button>
       </Form>
     </div>
   )
 }
 
-export default PollForm
+function mapStateToProps({ authedUser, polls }) {
+  return {
+    authedUser,
+    polls
+  }
+}
+
+export default connect(mapStateToProps)(PollForm)

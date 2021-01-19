@@ -39,14 +39,10 @@ const users = [
   },
 ]
 
-
-
-const LoginForm = (props) => {
+const LoginForm = ({ dispatch }) => {
   const [user, setUser] = useState('')
   const [avatar, setAvatar] = useState('')
   const [submitFailed, setSubmitFailed] = useState(false)
-
-  const { dispatch } = props
 
   let history = useHistory();
 

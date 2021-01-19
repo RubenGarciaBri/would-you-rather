@@ -5,8 +5,8 @@ import { Menu } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 
-const Nav = (props) => {
-  const { authedUser } = props
+const Nav = ({ authedUser }) => {
+
 
   return (
     <nav className='navbar'>
