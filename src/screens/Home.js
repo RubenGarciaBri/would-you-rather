@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../components/Nav'
 import HomePanel from '../components/HomePanel'
 
+
 const Home = () => {
+ 
   return (
     <>
      <Nav />
@@ -10,5 +12,6 @@ const Home = () => {
     </>
   )
 }
+
 
 export default Home

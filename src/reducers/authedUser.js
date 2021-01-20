@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER } from '../actions/authedUser'
+import { SET_AUTHED_USER, REMOVE_AUTHED_USER } from '../actions/authedUser'
 
 export default function authedUser (state = null, action) {
   switch(action.type) {
@@ -7,7 +7,12 @@ export default function authedUser (state = null, action) {
         id: action.payload.id,
         avatar: action.payload.avatar
       }
+      
+    case REMOVE_AUTHED_USER :
+      return null
+
     default :
       return state
+      
   }
 }

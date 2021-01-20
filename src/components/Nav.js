@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
+import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
+import { removeAuthedUser } from '../actions/authedUser'
 
-const Nav = ({ authedUser }) => {
+const Nav = ({ authedUser, dispatch }) => {
+  let history = useHistory();
 
+  const handleLogout = () => {
+    dispatch(removeAuthedUser())
+    history.push('/')
+  }
 
   return (
     <nav className='navbar'>
@@ -27,7 +34,8 @@ const Nav = ({ authedUser }) => {
             <img src={authedUser.avatar} className='navbar__right-list__item-img'/>
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
-          <li className='navbar__right-list__item'><NavLink to='/' exact>Logout</NavLink>
+          <li className='navbar__right-list__item'><button
+          onClick={handleLogout}>Logout</button>
           </li>
         </ul>
         </div>

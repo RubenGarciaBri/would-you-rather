@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Button } from 'semantic-ui-react'
 import Poll from './Poll'
 
-const HomePanel = ({ polls }) => {
-  
+const HomePanel = ({ polls }) => {  
   return (
     <div className='home-panel main-container'>
       <Button.Group className='home-panel__btn-group'>
@@ -13,15 +12,16 @@ const HomePanel = ({ polls }) => {
       </Button.Group>
       <div className='home-panel__list'>
         {polls ? polls.map((poll) => {
-            return <Poll data={poll}/>
+            return <Poll key={poll.id} data={poll}/>
           }) : null}
       </div>
     </div>
   )
 }
 
-function mapStateToProps ({ polls }) {
+function mapStateToProps ({ authedUser, polls }) {
   return {
+    authedUser,
     polls
   }
 }
