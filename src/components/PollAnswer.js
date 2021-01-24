@@ -3,13 +3,12 @@ import { connect } from 'react-redux'
 import { Button, Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-const PollAnswer = ({ data }) => {
+const PollAnswer = ({ poll }) => {
   const [option, setOption] = useState('')
 
-  console.log(option)
+  const { author, firstQuestion, secondQuestion, id} = poll
 
   const handleChange = e => {
-
     setOption(e.target.textContent)
   }
 
@@ -17,10 +16,10 @@ const PollAnswer = ({ data }) => {
     <div className='poll-answer'>
       <div className='poll-answer__head'>
         <div className='poll-answer__head-left'>
-          <img src={data.poll.author.avatar} className='poll-answer__head-left__img shadow-xs'/>
+          <img src={author.avatar} className='poll-answer__head-left__img shadow-xs'/>
         </div>
         <div className='poll-answer__head-right'>
-          <span className='poll-answer__head-right__name'>{data.poll.author.id}</span>
+          <span className='poll-answer__head-right__name'>{author.id}</span>
         </div>
       </div>
       <div className='poll-answer__body'>
@@ -30,17 +29,17 @@ const PollAnswer = ({ data }) => {
             <Form.Radio      
  
               className='poll-answer__body-form__option'
-              label={data.poll.firstQuestion}
-              value={data.poll.firstQuestion}
-              checked={option === data.poll.firstQuestion}
+              label={firstQuestion}
+              value={firstQuestion}
+              checked={option === firstQuestion}
               onChange={handleChange}
             />  
             <Form.Radio
        
               className='poll-answer__body-form__option'
-              label={data.poll.secondQuestion}
-              value={data.poll.secondQuestion}
-              checked={option === data.poll.secondQuestion}
+              label={secondQuestion}
+              value={secondQuestion}
+              checked={option === secondQuestion}
               onChange={handleChange}
             />         
           </Form.Group>
@@ -51,10 +50,13 @@ const PollAnswer = ({ data }) => {
   )
 }
 
-function mapStateToProps({ authedUser, polls }) {
+function mapStateToProps({ authedUser, polls }, { id }) {
+  const poll = polls[id]
+
   return {
     authedUser,
-    polls
+    polls,
+    poll: poll
   }
 }
 

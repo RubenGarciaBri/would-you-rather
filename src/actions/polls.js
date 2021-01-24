@@ -30,7 +30,7 @@ export function handleAddPoll(firstQuestion, secondQuestion) {
     return savePoll({
       author: authedUser,
       firstQuestion,
-      secondQuestion    
+      secondQuestion
     })
     .then((poll) => dispatch(addPoll(poll)))
   }

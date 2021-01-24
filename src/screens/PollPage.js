@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import Nav from '../components/Nav'
 import PollAnswer from '../components/PollAnswer' 
 
-const PollPage = ({ id, polls }) => {
+const PollPage = ({ id, polls, pollIds }) => {
   return (
     <>
       <Nav />
       <div className='answer-poll-panel main-container'>
-      {polls.filter(p => p.poll.id === id).map((filteredPoll) => {
-          return <PollAnswer key={filteredPoll.id} data={filteredPoll}/>
+      {pollIds.filter(pollId => pollId === id).map((p) => {
+          return <PollAnswer key={p.id} id={p}/>
         })}
       </div>
     </>
@@ -22,7 +22,8 @@ function mapStateToProps({ authedUser, polls }, props) {
   return {
     id,
     authedUser,
-    polls
+    polls,
+    pollIds: Object.keys(polls)
   }
 }
 

@@ -7,7 +7,7 @@ let users = {
 }
 
 let polls = {
-  0: {
+  '55675685785678578': {
     id: '55675685785678578',
     author: {
       id: 'Mike',
@@ -15,6 +15,15 @@ let polls = {
     },
     firstQuestion: 'A powerful lion',
     secondQuestion: 'A cute dog'
+  },
+  '76757564985876956': {
+    id: '76757564985876956',
+    author: {
+      id: 'Jennifer',
+      avatar: 'https://randomuser.me/api/portraits/women/3.jpg'    
+    },
+    firstQuestion: 'A big tiger',
+    secondQuestion: 'A lazy cat'
   }
 }
 
@@ -23,7 +32,8 @@ function formatPoll ({ firstQuestion, secondQuestion, author }) {
     author,
     id: generateId(),
     firstQuestion,
-    secondQuestion
+    secondQuestion,
+    answered: false
   }
 }
 
