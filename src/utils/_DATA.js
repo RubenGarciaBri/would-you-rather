@@ -1,9 +1,26 @@
 import { generateId } from '../utils/helpers'
 
-let users = {
-  id: 'Mike',
-  avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
-  polls: []
+export let users = {
+  'Mike': {
+    id: 'Mike',
+    avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
+    polls: []
+  },
+  'Carol': {
+    id: 'Carol',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+    polls: []
+  },
+  'Jennifer': {
+    id: 'Jennifer',
+    avatar: 'https://randomuser.me/api/portraits/women/3.jpg',
+    polls: []
+  },
+  'Victor': {
+    id: 'Victor',
+    avatar: 'https://randomuser.me/api/portraits/men/16.jpg',
+    polls: []
+  }
 }
 
 let polls = {

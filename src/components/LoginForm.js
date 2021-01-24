@@ -3,40 +3,41 @@ import { Select, Button, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import { users } from '../utils/_DATA'
 
-const users = [
+const formUsers = [
   {
-    text: 'Mike',
-    value: 'mike',
+    text: users['Mike'].id,
+    value: users['Mike'].id,
     image: {
       avatar: true,
-      src: 'https://randomuser.me/api/portraits/men/49.jpg'
+      src: users['Mike'].avatar
     }
   },
   {
-    text: 'Carol',
-    value: 'carol',
+    text: users['Carol'].id,
+    value: users['Carol'].id,
     image: {
       avatar: true,
-      src: 'https://randomuser.me/api/portraits/women/2.jpg'
+      src: users['Carol'].avatar
     }
   },
   {
-    text: 'Jennifer',
-    value: 'jennifer',
+    text: users['Jennifer'].id,
+    value: users['Jennifer'].id,
     image: {
       avatar: true,
-      src: 'https://randomuser.me/api/portraits/women/3.jpg'
+      src: users['Jennifer'].avatar
     }
   },
   {
-    text: 'Victor',
-    value: 'victor',
+    text: users['Victor'].id,
+    value: users['Victor'].id,
     image: {
       avatar: true,
-      src: 'https://randomuser.me/api/portraits/men/16.jpg'
+      src: users['Victor'].avatar
     }
-  },
+  }
 ]
 
 const LoginForm = ({ dispatch }) => {
@@ -81,7 +82,7 @@ const LoginForm = ({ dispatch }) => {
       <div className="login-form__container">
         <h3>Welcome to "Would you Rather"!</h3>
         <p>Select a user to start using the app</p>
-        <Select className='login-form__select' placeholder='Select user' options={users} onChange={handleChange}/>
+        <Select className='login-form__select' placeholder='Select user' options={formUsers} onChange={handleChange}/>
         {submitFailed === true ?
           <Message
           error
