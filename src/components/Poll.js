@@ -1,34 +1,37 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Poll = ({ authedUser, data }) => {
+const Poll = ({ authedUser, poll }) => {
 
+  const { author, firstQuestion, secondQuestion, id} = poll
+ 
   return (
     <div className='poll'>
       <div className='poll__head'>
         <div className='poll__head-left'>
-          <img src={authedUser.avatar} className='poll__head-left__img shadow-xs'/>
+          <img src={author.avatar} className='poll__head-left__img shadow-xs'/>
         </div>
         <div className='poll__head-right'>
-          <span className='poll__head-right__name'>{authedUser.id}</span>
+          <span className='poll__head-right__name'>{author.id}</span>
         </div>
       </div>
       <div className='poll__body'>
         <p className='poll__body-title'>Would you rather...</p>
-        <p className='poll__body-questions'>{data.firstQuestion}<br/>or... <br/>{data.secondQuestion}
+        <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>
-        <Link to={`poll/${data.id}`} className='poll__body-btn'>Answer Poll</Link>
+        <Link to={`poll/${id}`} className='poll__body-btn'>Answer Poll</Link>
       </div>
     </div>
   )
 }
 
-function mapStateToProps({ authedUser, polls }) {
+function mapStateToProps({ authedUser, polls }, { id }) {
+  const poll = polls[id]
+
   return {
     authedUser,
-    polls
+    poll: poll,
   }
 }
 

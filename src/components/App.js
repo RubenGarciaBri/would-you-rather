@@ -7,12 +7,13 @@ import NewPoll from '../screens/NewPoll'
 import Leaderboard from '../screens/Leaderboard'
 import PollPage from '../screens/PollPage'
 import { setAuthedUser } from '../actions/authedUser'
+import { handleInitialData } from '../actions/shared'
 
 const App = ({ authedUser, loading, dispatch }) => {
 
   // Set random avatar for easier development, REMOVE LATER!
   useEffect(() => {
-    dispatch(setAuthedUser('Carol', 'https://randomuser.me/api/portraits/women/2.jpg'))
+    dispatch(handleInitialData())
   }, [])
   
 

@@ -15,3 +15,13 @@
 .ui.message p {
   font-size: 1.4rem;
 }
+
+// Form
+
+.ui.form .fields {
+  flex-direction: column;
+}
+
+.ui.checkbox input.hidden+label {
+  font-size: 1.6rem;
+}

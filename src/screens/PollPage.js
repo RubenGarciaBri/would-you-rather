@@ -1,23 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Nav from '../components/Nav'
-import AnswerPoll from '../components/AnswerPoll'
-import Poll from '../components/Poll'
+import PollAnswer from '../components/PollAnswer' 
 
-const PollPage = ({ polls }) => {
+const PollPage = ({ id, polls }) => {
   return (
     <>
       <Nav />
-      <AnswerPoll />
-      {polls ? polls.map((poll) => {
-            return <Poll data={poll}/>
-          }) : null}
+      <div className='answer-poll-panel main-container'>
+      {polls.filter(p => p.poll.id === id).map((filteredPoll) => {
+          return <PollAnswer key={filteredPoll.id} data={filteredPoll}/>
+        })}
+      </div>
     </>
   )
 }
 
-function mapStateToProps({ authedUser, polls }) {
+function mapStateToProps({ authedUser, polls }, props) {
+  const { id } = props.match.params
+
   return {
+    id,
     authedUser,
     polls
   }

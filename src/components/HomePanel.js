@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Button } from 'semantic-ui-react'
 import Poll from './Poll'
 
-const HomePanel = ({ polls }) => {  
+const HomePanel = ({ polls, pollIds }) => {  
   return (
     <div className='home-panel main-container'>
       <Button.Group className='home-panel__btn-group'>
@@ -11,8 +11,8 @@ const HomePanel = ({ polls }) => {
         <Button className='home-panel__btn-group__btn' positive>Answered</Button>
       </Button.Group>
       <div className='home-panel__list'>
-        {polls ? polls.map((poll) => {
-            return <Poll key={poll.id} data={poll}/>
+        {pollIds ? pollIds.map((pollId) => {
+            return <Poll key={pollId} id={pollId}/>
           }) : null}
       </div>
     </div>
@@ -22,7 +22,8 @@ const HomePanel = ({ polls }) => {
 function mapStateToProps ({ authedUser, polls }) {
   return {
     authedUser,
-    polls
+    polls,
+    pollIds: Object.keys(polls)
   }
 }
 

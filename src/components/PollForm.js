@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Form, Checkbox, Button } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { createPoll } from '../actions/polls'
+import { handleAddPoll } from '../actions/polls'
 
 
-const PollForm = ({ dispatch }) => {
+const PollForm = ({ dispatch, authedUser }) => {
   const [firstQuestion, setFirstQuestion] = useState('')
   const [secondQuestion, setSecondQuestion] = useState('')
 
@@ -20,7 +20,7 @@ const PollForm = ({ dispatch }) => {
   }
 
   const handleSubmit = () => {
-    dispatch(createPoll(firstQuestion, secondQuestion))
+    dispatch(handleAddPoll(firstQuestion, secondQuestion))
     history.push('/home')
   }
 
