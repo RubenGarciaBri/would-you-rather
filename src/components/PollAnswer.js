@@ -2,14 +2,21 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Button, Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { handleAnswerPoll } from '../actions/polls'
 
-const PollAnswer = ({ poll }) => {
+const PollAnswer = ({ poll, dispatch }) => {
   const [option, setOption] = useState('')
 
-  const { author, firstQuestion, secondQuestion, id} = poll
+  const { author, firstQuestion, secondQuestion, id, isAnswered, firstQuestionReplies, secondQuestionReplies, totalReplies} = poll
 
   const handleChange = e => {
     setOption(e.target.textContent)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    dispatch(handleAnswerPoll(id, option))
   }
 
   return (
@@ -24,27 +31,34 @@ const PollAnswer = ({ poll }) => {
       </div>
       <div className='poll-answer__body'>
       <p className='poll-answer__body-title'>Would you rather...</p>
-        <Form className='poll-answer__body-form'>
-          <Form.Group>
-            <Form.Radio      
- 
-              className='poll-answer__body-form__option'
-              label={firstQuestion}
-              value={firstQuestion}
-              checked={option === firstQuestion}
-              onChange={handleChange}
-            />  
-            <Form.Radio
-       
-              className='poll-answer__body-form__option'
-              label={secondQuestion}
-              value={secondQuestion}
-              checked={option === secondQuestion}
-              onChange={handleChange}
-            />         
-          </Form.Group>
-          <Form.Button className='poll-answer__body-btn'>Submit</Form.Button>
+      {isAnswered === false ? 
+        <Form onSubmit={handleSubmit}className='poll-answer__body-form'>
+        <Form.Group>
+          <Form.Radio      
+            className='poll-answer__body-form__option'
+            label={firstQuestion}
+            value={firstQuestion}
+            checked={option === firstQuestion}
+            onChange={handleChange}
+          />  
+          <Form.Radio
+            className='poll-answer__body-form__option'
+            label={secondQuestion}
+            value={secondQuestion}
+            checked={option === secondQuestion}
+            onChange={handleChange}
+          />         
+        </Form.Group>
+        <Form.Button className='poll-answer__body-btn'>Submit</Form.Button>
         </Form>
+        :
+        <div>
+          <p>{firstQuestion}<br></br>{firstQuestionReplies} replies</p>
+          <p>{secondQuestion}<br></br>{secondQuestionReplies} replies</p>
+          <p>Total: {totalReplies}</p>
+          <Link to='/home'>Back</Link>
+        </div> 
+      }
       </div>
     </div>
   )

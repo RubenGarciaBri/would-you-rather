@@ -31,7 +31,8 @@ let polls = {
       avatar: 'https://randomuser.me/api/portraits/men/49.jpg'    
     },
     firstQuestion: 'A powerful lion',
-    secondQuestion: 'A cute dog'
+    secondQuestion: 'A cute dog',
+    isAnswered: false
   },
   '76757564985876956': {
     id: '76757564985876956',
@@ -40,7 +41,8 @@ let polls = {
       avatar: 'https://randomuser.me/api/portraits/women/3.jpg'    
     },
     firstQuestion: 'A big tiger',
-    secondQuestion: 'A lazy cat'
+    secondQuestion: 'A lazy cat',
+    isAnswered: false
   }
 }
 
@@ -50,7 +52,10 @@ function formatPoll ({ firstQuestion, secondQuestion, author }) {
     id: generateId(),
     firstQuestion,
     secondQuestion,
-    answered: false
+    isAnswered: false,
+    firstQuestionReplies: 0,
+    secondQuestionReplies: 0,
+    totalReplies: 0
   }
 }
 
