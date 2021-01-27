@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Poll = ({ authedUser, poll }) => {
 
-  const { author, firstQuestion, secondQuestion, id} = poll
+  const { author, firstQuestion, secondQuestion, id, isAnswered} = poll
  
   return (
     <div className='poll'>
@@ -20,7 +20,7 @@ const Poll = ({ authedUser, poll }) => {
         <p className='poll__body-title'>Would you rather...</p>
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>
-        <Link to={`poll/${id}`} className='poll__body-btn'>Answer Poll</Link>
+        <Link to={`poll/${id}`} className='poll__body-btn'>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Link>
       </div>
     </div>
   )

@@ -32,7 +32,10 @@ let polls = {
     },
     firstQuestion: 'A powerful lion',
     secondQuestion: 'A cute dog',
-    isAnswered: false
+    isAnswered: false,
+    firstQuestionReplies: 0,
+    secondQuestionReplies: 1,
+    totalReplies: 1
   },
   '76757564985876956': {
     id: '76757564985876956',
@@ -42,7 +45,10 @@ let polls = {
     },
     firstQuestion: 'A big tiger',
     secondQuestion: 'A lazy cat',
-    isAnswered: false
+    isAnswered: true,
+    firstQuestionReplies: 1,
+    secondQuestionReplies: 0,
+    totalReplies: 1
   }
 }
 
