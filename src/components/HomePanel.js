@@ -11,7 +11,6 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
     setActiveCategory(e.target.innerText.toLowerCase())
   }
 
-  console.log(activeCategory)
 
   return (
     <div className='home-panel main-container'>

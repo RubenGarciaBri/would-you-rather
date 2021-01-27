@@ -4,6 +4,7 @@ import { Button, Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { handleAnswerPoll } from '../actions/polls'
 
+
 const PollAnswer = ({ poll, dispatch }) => {
   const [option, setOption] = useState('')
 

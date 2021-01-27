@@ -1,5 +1,6 @@
 
 import { savePoll } from '../utils/api'
+import { addNewPollToUser, addAnsweredPollToUser } from '../actions/users'
 
 export const RECEIVE_POLLS = 'RECEIVE_POLLS'
 export const ADD_POLL = 'ADD_POLL'
@@ -44,13 +45,19 @@ export function handleAddPoll(firstQuestion, secondQuestion) {
       firstQuestion,
       secondQuestion
     })
-    .then((poll) => dispatch(addPoll(poll)))
+    .then((poll) => {
+      dispatch(addPoll(poll))
+      dispatch(addNewPollToUser(poll.author, poll.id))
+    })
   }
 }
 
 export function handleAnswerPoll(id, option) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { authedUser } = getState()
+
     dispatch(answerPoll(id, option))
+    dispatch(addAnsweredPollToUser(authedUser, id))
   }
 }
 

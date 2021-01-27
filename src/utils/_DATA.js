@@ -4,28 +4,32 @@ export let users = {
   'Mike': {
     id: 'Mike',
     avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
-    polls: []
+    createdPolls: ['98c1e68-3320-4157-18w7-84c2d1e7zxf1v'],
+    answeredPolls: []
   },
   'Carol': {
     id: 'Carol',
     avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
-    polls: []
+    createdPolls: [],
+    answeredPolls: []
   },
   'Jennifer': {
     id: 'Jennifer',
     avatar: 'https://randomuser.me/api/portraits/women/3.jpg',
-    polls: []
+    createdPolls: [],
+    answeredPolls: ['17w1v628-192q-1537-12x4-11a131j3tb6p']
   },
   'Victor': {
     id: 'Victor',
     avatar: 'https://randomuser.me/api/portraits/men/16.jpg',
-    polls: []
+    createdPolls: [],
+    answeredPolls: []
   }
 }
 
 let polls = {
-  '55675685785678578': {
-    id: '55675685785678578',
+  '98c1e68-3320-4157-18w7-84c2d1e7zxf1v': {
+    id: '98c1e68-3320-4157-18w7-84c2d1e7zxf1v',
     author: {
       id: 'Mike',
       avatar: 'https://randomuser.me/api/portraits/men/49.jpg'    
@@ -37,8 +41,8 @@ let polls = {
     secondQuestionReplies: 1,
     totalReplies: 1
   },
-  '76757564985876956': {
-    id: '76757564985876956',
+  '17w1v628-192q-1537-12x4-11a131j3tb6p': {
+    id: '17w1v628-192q-1537-12x4-11a131j3tb6p',
     author: {
       id: 'Jennifer',
       avatar: 'https://randomuser.me/api/portraits/women/3.jpg'    
