@@ -12,7 +12,8 @@ export default  function users (state = {}, action) {
         ...state,
         [action.payload.user.id]: {
           ...state[action.payload.user.id],
-          createdPolls: state[action.payload.user.id].createdPolls.concat(action.payload.pollId)
+          createdPolls: state[action.payload.user.id].createdPolls.concat(action.payload.pollId),
+          points: state[action.payload.user.id].points + 1
         }
       }
       case ADD_ANSWERED_POLL_TO_USER :
@@ -20,7 +21,8 @@ export default  function users (state = {}, action) {
         ...state,
         [action.payload.user.id]: {
           ...state[action.payload.user.id],
-          answeredPolls: state[action.payload.user.id].answeredPolls.concat(action.payload.pollId)
+          answeredPolls: state[action.payload.user.id].answeredPolls.concat(action.payload.pollId),
+          points: state[action.payload.user.id].points + 1
         }
       }
     default :

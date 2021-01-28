@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 import Nav from '../components/Nav'
 import LeadCard from '../components/LeadCard'
 
-const Leaderboard = ({ authedUser, userIds}) => {
+const Leaderboard = ({ authedUser, sortedUserIds}) => {
 
-  console.log(userIds)
 
   return (
     <>
@@ -13,7 +12,7 @@ const Leaderboard = ({ authedUser, userIds}) => {
       <div className='leader-board'>
       <h3 className='leader-board__title'>Leaderboard</h3>
       <div className='leader-board__list'>
-        {userIds.map((id) => {
+        {sortedUserIds.map((id) => {
           return <LeadCard id={id}/>
         })}
       </div>
@@ -23,10 +22,14 @@ const Leaderboard = ({ authedUser, userIds}) => {
 }
 
 function mapStateToProps ({ authedUser, users }) {
+  const sortedUsers = Object.fromEntries(Object.entries(users).sort((a, b) => b[1].points - a[1].points))
+  const sortedUserIds = Object.keys(sortedUsers)
+
+
   return {
     authedUser,
     users,
-    userIds: Object.keys(users)
+    sortedUserIds: sortedUserIds
   }
 }
 

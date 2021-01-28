@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const LeadCard = ({user}) => {
 
-  const { id, avatar, createdPolls, answeredPolls } = user
+  const { id, avatar, createdPolls, answeredPolls, points } = user
 
   return (
     <div className='lead-card shadow-slim'>
@@ -16,7 +16,7 @@ const LeadCard = ({user}) => {
         <p className='lead-card__center-questions lead-card__center-questions--created'>Polls created: {createdPolls.length}</p>
       </div>
       <div className='lead-card__right'>
-        <p className='lead-card__right-score'>{answeredPolls.length + createdPolls.length} points</p>
+        <p className='lead-card__right-score'>{points} points</p>
       </div>
     </div>
   )
