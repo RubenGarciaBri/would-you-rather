@@ -56,14 +56,18 @@ const PollAnswer = ({ poll, dispatch }) => {
         <div>
           <p>{firstQuestion}</p>
           <Progress
+            progress='percent'
             percent={(firstQuestionReplies / totalReplies ) * 100}
             success={option === firstQuestion ? true : false}
+            size='large'
           />
           <p className='poll-answer__body-result'>{firstQuestionReplies} out of {totalReplies} votes</p>
           <p>{secondQuestion}</p>
           <Progress
+          progress='percent'
           percent={(secondQuestionReplies / totalReplies ) * 100}
           success={option === secondQuestion ? true : false}
+          size='large'
           />
           <p className='poll-answer__body-result'>{secondQuestionReplies} out of {totalReplies} votes</p>
           <Link to='/home'>Back</Link>

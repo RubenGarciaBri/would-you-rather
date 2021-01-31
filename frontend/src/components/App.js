@@ -24,9 +24,9 @@ const App = ({ authedUser, loading, dispatch }) => {
       : <div className='App'>
         <Route path='/' exact component={Login}/>
         <Route path='/home' component={Home}/>
-        <Route path='/new' component={NewPoll}/>
+        <Route path='/add' component={NewPoll}/>
         <Route path='/leaderboard' component={Leaderboard}/>
-        <Route path='/poll/:id' component={PollPage} />
+        <Route path='/questions/:id' component={PollPage} />
       </div>
       }
     </>

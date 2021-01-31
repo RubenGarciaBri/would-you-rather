@@ -20,7 +20,7 @@ const Poll = ({ authedUser, poll }) => {
         <p className='poll__body-title'>Would you rather...</p>
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>
-        <Link to={`poll/${id}`} className='poll__body-btn'>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Link>
+        <Link to={`questions/${id}`} className='poll__body-btn'>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Link>
       </div>
     </div>
   )

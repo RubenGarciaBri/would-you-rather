@@ -22,7 +22,7 @@ const Nav = ({ authedUser, dispatch }) => {
           <ul className='navbar__left-list'>
             <li className='navbar__left-list__item active'><NavLink to='/home' exact activeClassName='active'>Home</NavLink>
             </li>
-            <li className='navbar__left-list__item active'><NavLink to='/new' exact activeClassName='active'>Create Poll</NavLink>
+            <li className='navbar__left-list__item active'><NavLink to='/add' exact activeClassName='active'>Create Poll</NavLink>
             </li>
             <li className='navbar__left-list__item active'><NavLink to='/leaderboard' exact activeClassName='active'>Leaderboard</NavLink>
             </li>
