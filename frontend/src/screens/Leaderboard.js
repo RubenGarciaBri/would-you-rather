@@ -2,21 +2,28 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Nav from '../components/Nav'
 import LeadCard from '../components/LeadCard'
+import ErrorMessage from '../components/ErrorMessage'
 
 const Leaderboard = ({ authedUser, sortedUserIds}) => {
 
 
   return (
     <>
-      <Nav/>
-      <div className='leader-board'>
-      <h3 className='leader-board__title'>Leaderboard</h3>
-      <div className='leader-board__list'>
-        {sortedUserIds.map((id) => {
-          return <LeadCard id={id}/>
-        })}
-      </div>
-    </div>
+      {authedUser !== null ?
+      <>
+        <Nav/>
+        <div className='leader-board'>
+        <h3 className='leader-board__title'>Leaderboard</h3>
+        <div className='leader-board__list'>
+          {sortedUserIds.map((id) => {
+            return <LeadCard id={id}/>
+          })}
+        </div>
+        </div>
+      </>  
+      : 
+        <ErrorMessage/>
+      }  
     </>
   )
 }

@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { Menu } from 'semantic-ui-react'
-import { Container } from 'semantic-ui-react'
-import { Image } from 'semantic-ui-react'
+import { Menu, Button, Container, Immage } from 'semantic-ui-react'
 import { removeAuthedUser } from '../actions/authedUser'
 
 const Nav = ({ authedUser, dispatch }) => {
@@ -20,11 +18,11 @@ const Nav = ({ authedUser, dispatch }) => {
       <div className='navbar__container main-container'>
         <div className='navbar__left'>
           <ul className='navbar__left-list'>
-            <li className='navbar__left-list__item active'><NavLink to='/home' exact activeClassName='active'>Home</NavLink>
+            <li className='navbar__left-list__item active'><NavLink to='/home' activeClassName='active'>Home</NavLink>
             </li>
-            <li className='navbar__left-list__item active'><NavLink to='/add' exact activeClassName='active'>Create Poll</NavLink>
+            <li className='navbar__left-list__item active'><NavLink to='/add'  activeClassName='active'>Create Poll</NavLink>
             </li>
-            <li className='navbar__left-list__item active'><NavLink to='/leaderboard' exact activeClassName='active'>Leaderboard</NavLink>
+            <li className='navbar__left-list__item active'><NavLink to='/leaderboard'  activeClassName='active'>Leaderboard</NavLink>
             </li>
           </ul>
         </div>
@@ -34,8 +32,8 @@ const Nav = ({ authedUser, dispatch }) => {
             <img src={authedUser.avatar} className='navbar__right-list__item-img'/>
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
-          <li className='navbar__right-list__item'><button
-          onClick={handleLogout}>Logout</button>
+          <li className='navbar__right-list__item'><Button
+          onClick={handleLogout}>Logout</Button>
           </li>
         </ul>
         </div>

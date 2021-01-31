@@ -1,17 +1,29 @@
 import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import Nav from '../components/Nav'
 import HomePanel from '../components/HomePanel'
+import ErrorMessage from '../components/ErrorMessage'
 
-
-const Home = () => {
+const Home = ({ authedUser }) => {
  
   return (
     <>
-     <Nav />
-     <HomePanel />
+      {authedUser !== null ?
+      <>
+        <Nav />
+        <HomePanel />
+      </>  
+      : 
+      <ErrorMessage/>
+      }  
     </>
   )
 }
 
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
 
-export default Home
+export default connect(mapStateToProps)(Home)

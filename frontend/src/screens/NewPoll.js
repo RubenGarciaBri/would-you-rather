@@ -1,15 +1,29 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Nav from '../components/Nav'
 import PollForm from '../components/PollForm'
+import ErrorMessage from '../components/ErrorMessage'
 
-const NewPoll = () => {
+const NewPoll = ({ authedUser }) => {
   return (
-    <div>
-      <Nav/>
-      <p className='new-poll__title main-container align-center'>Create New Poll</p>
-      <PollForm/>
-    </div>
+    <>
+      {authedUser !== null ?
+      <>
+        <Nav/>
+        <p className='new-poll__title main-container align-center'>Create New Poll</p>
+        <PollForm/>
+      </>  
+      : 
+        <ErrorMessage/>
+      }  
+    </>
   )
 }
 
-export default NewPoll
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(NewPoll)
