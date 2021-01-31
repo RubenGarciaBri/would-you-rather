@@ -46,7 +46,7 @@ function formatPoll ({ firstQuestion, secondQuestion, author }) {
   }
 }
 
-export function _savePoll ({ firstQuestion, secondQuestion, author }) {
+export async function _savePoll ({ firstQuestion, secondQuestion, author }) {
   return new Promise((res, rej) => {
     const formattedPoll = formatPoll({
       author,
@@ -54,22 +54,8 @@ export function _savePoll ({ firstQuestion, secondQuestion, author }) {
       secondQuestion
     })
 
-    setTimeout(() => {
-      // polls = {
-      //   ...polls,
-      //   [formattedPoll.id]: formattedPoll,
-      // }
+    res(formattedPoll)
 
-      // users = {
-      //   ...users,
-      //   [author]: {
-      //     ...users[author],
-      //     polls: users[author].polls.concat([formattedPoll.id])
-      //   }
-      // }
-
-      res(formattedPoll)
-    }, 1000)
   })
 }
 

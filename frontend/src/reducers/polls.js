@@ -39,3 +39,4 @@ export default function polls (state = {}, action) {
       return state
   }
 }
+
