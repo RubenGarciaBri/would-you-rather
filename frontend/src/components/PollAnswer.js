@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Progress } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { handleAnswerPoll } from '../actions/polls'
 
@@ -54,9 +54,18 @@ const PollAnswer = ({ poll, dispatch }) => {
         </Form>
         :
         <div>
-          <p>{firstQuestion}<br></br>{firstQuestionReplies} replies</p>
-          <p>{secondQuestion}<br></br>{secondQuestionReplies} replies</p>
-          <p>Total: {totalReplies}</p>
+          <p>{firstQuestion}</p>
+          <Progress
+            percent={(firstQuestionReplies / totalReplies ) * 100}
+            success={option === firstQuestion ? true : false}
+          />
+          <p className='poll-answer__body-result'>{firstQuestionReplies} out of {totalReplies} votes</p>
+          <p>{secondQuestion}</p>
+          <Progress
+          percent={(secondQuestionReplies / totalReplies ) * 100}
+          success={option === secondQuestion ? true : false}
+          />
+          <p className='poll-answer__body-result'>{secondQuestionReplies} out of {totalReplies} votes</p>
           <Link to='/home'>Back</Link>
         </div> 
       }
