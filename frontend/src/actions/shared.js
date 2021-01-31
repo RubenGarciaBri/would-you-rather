@@ -12,7 +12,6 @@ export function handleInitialData() {
     .then(({ users, polls }) => {
     dispatch(receiveUsers(users))
     dispatch(receivePolls(polls))
-    dispatch(setAuthedUser(AUTHED_ID, AUTHED_AVATAR))
   })
   }
 }

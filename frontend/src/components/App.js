@@ -18,25 +18,21 @@ const App = ({ authedUser, loading, dispatch }) => {
   
 
   return (
-    // Used loading for easier development, REMOVE LATER!
     <>   
-      {loading ? null
-      : <div className='App'>
+      <div className='App'>
         <Route path='/' exact component={Login}/>
         <Route path='/home' component={Home}/>
         <Route path='/add' component={NewPoll}/>
         <Route path='/leaderboard' component={Leaderboard}/>
         <Route path='/questions/:id' component={PollPage} />
-      </div>
-      }
+      </div> 
     </>
   )
 }
 
 function mapStateToProps ({ authedUser }) {
-  // Used loading for easier development, REMOVE LATER!
   return {
-    loading: authedUser === null
+    authedUser
   }
 }
 
