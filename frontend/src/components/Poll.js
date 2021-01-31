@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
 
 const Poll = ({ authedUser, poll }) => {
 
@@ -20,7 +21,9 @@ const Poll = ({ authedUser, poll }) => {
         <p className='poll__body-title'>Would you rather...</p>
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>
-        <Link to={`questions/${id}`} className='poll__body-btn'>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Link>
+          <Link to={`questions/${id}`} className='poll__body-btn'>
+            <Button>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Button>
+          </Link>   
       </div>
     </div>
   )

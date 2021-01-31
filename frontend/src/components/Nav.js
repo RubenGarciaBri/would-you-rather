@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Menu, Button, Container, Immage } from 'semantic-ui-react'
+
 import { removeAuthedUser } from '../actions/authedUser'
 
 const Nav = ({ authedUser, dispatch }) => {

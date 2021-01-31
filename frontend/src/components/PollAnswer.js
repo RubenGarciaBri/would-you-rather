@@ -70,7 +70,8 @@ const PollAnswer = ({ poll, dispatch }) => {
           size='large'
           />
           <p className='poll-answer__body-result'>{secondQuestionReplies} out of {totalReplies} votes</p>
-          <Link to='/home'>Back</Link>
+          
+          <Link to='/home'><Button>Back</Button></Link>
         </div> 
       }
       </div>
