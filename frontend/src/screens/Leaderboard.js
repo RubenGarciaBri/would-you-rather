@@ -16,7 +16,7 @@ const Leaderboard = ({ authedUser, sortedUserIds}) => {
         <h3 className='leader-board__title'>Leaderboard</h3>
         <div className='leader-board__list'>
           {sortedUserIds.map((id) => {
-            return <LeadCard id={id}/>
+            return <LeadCard key={id} id={id}/>
           })}
         </div>
         </div>

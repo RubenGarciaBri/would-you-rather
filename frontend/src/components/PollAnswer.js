@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import { handleAnswerPoll } from '../actions/polls'
 
 
-const PollAnswer = ({ poll, dispatch }) => {
+const PollAnswer = ({ poll, authedUser, dispatch }) => {
   const [option, setOption] = useState('')
 
-  const { author, firstQuestion, secondQuestion, id, isAnswered, firstQuestionReplies, secondQuestionReplies, totalReplies} = poll
+  const { author, firstQuestion, secondQuestion, id, answeredBy, firstQuestionReplies, secondQuestionReplies, totalReplies} = poll
 
   const handleChange = e => {
     setOption(e.target.textContent)
@@ -32,7 +32,7 @@ const PollAnswer = ({ poll, dispatch }) => {
       </div>
       <div className='poll-answer__body'>
       <p className='poll-answer__body-title'>Would you rather...</p>
-      {isAnswered === false ? 
+      {!answeredBy.includes(authedUser.id) ? 
         <Form onSubmit={handleSubmit}className='poll-answer__body-form'>
         <Form.Group>
           <Form.Radio      

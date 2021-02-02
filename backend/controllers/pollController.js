@@ -9,7 +9,7 @@ let polls = {
     },
     firstQuestion: 'A powerful lion',
     secondQuestion: 'A cute dog',
-    isAnswered: false,
+    answeredBy: ['Carol'],
     firstQuestionReplies: 0,
     secondQuestionReplies: 1,
     totalReplies: 1
@@ -22,7 +22,7 @@ let polls = {
     },
     firstQuestion: 'A big tiger',
     secondQuestion: 'A lazy cat',
-    isAnswered: true,
+    answeredBy: [],
     firstQuestionReplies: 1,
     secondQuestionReplies: 0,
     totalReplies: 1

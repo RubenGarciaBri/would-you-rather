@@ -51,7 +51,7 @@ const LoginForm = ({ dispatch }) => {
     const target = e.target
 
     // Get name and avatar from Select element
-    const selectName = target.children[1].outerText
+    const selectName = target.children[1].innerText
     const selectAvatar = target.children[0].currentSrc
 
     setUser(selectName)

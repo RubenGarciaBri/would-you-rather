@@ -12,7 +12,7 @@ const PollPage = ({ id, polls, pollIds, authedUser }) => {
         <Nav />
         <div className='answer-poll-panel main-container'>
         {pollIds.filter(pollId => pollId === id).map((p) => {
-            return <PollAnswer key={p.id} id={p}/>
+            return <PollAnswer key={p} id={p}/>
           })}
         </div>
       </>  

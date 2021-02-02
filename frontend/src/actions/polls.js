@@ -28,11 +28,12 @@ function addPoll(poll) {
 }
 
 
-function answerPoll(id, option) {
+function answerPoll(id, user, option) {
   return {
     type: ANSWER_POLL,
     payload: {
       id,
+      user,
       option
     }
   }
@@ -61,7 +62,7 @@ export function handleAnswerPoll(id, option) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
 
-    dispatch(answerPoll(id, option))
+    dispatch(answerPoll(id, authedUser, option))
     dispatch(addAnsweredPollToUser(authedUser, id))
     dispatch(savePolls())
     dispatch(saveUsers())

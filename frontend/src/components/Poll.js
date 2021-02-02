@@ -1,11 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 
 const Poll = ({ authedUser, poll }) => {
+  let history = useHistory();
 
-  const { author, firstQuestion, secondQuestion, id, isAnswered} = poll
+  const { author, firstQuestion, secondQuestion, id, answeredBy} = poll
+
+  const handleClick = () => {
+    history.push(`questions/${id}`)
+  }
  
   return (
     <div className='poll'>
@@ -20,10 +26,9 @@ const Poll = ({ authedUser, poll }) => {
       <div className='poll__body'>
         <p className='poll__body-title'>Would you rather...</p>
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
-        </p>
-          <Link to={`questions/${id}`} className='poll__body-btn'>
-            <Button>{isAnswered === false ? 'Answer Poll' : 'See Results'}</Button>
-          </Link>   
+        </p>    
+        <Button onClick={handleClick} className='poll__body-btn'>{!answeredBy.includes(authedUser.id) ? 'Answer Poll' : 'See Results'}
+        </Button>
       </div>
     </div>
   )

@@ -39,7 +39,7 @@ function formatPoll ({ firstQuestion, secondQuestion, author }) {
     id: generateId(),
     firstQuestion,
     secondQuestion,
-    isAnswered: false,
+    answeredBy: [],
     firstQuestionReplies: 0,
     secondQuestionReplies: 0,
     totalReplies: 0

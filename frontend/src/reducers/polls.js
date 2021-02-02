@@ -18,7 +18,7 @@ export default function polls (state = {}, action) {
           ...state,
           [action.payload.id]: {
             ...state[action.payload.id],
-            isAnswered: true,   
+            answeredBy: state[action.payload.id].answeredBy.concat(action.payload.user.id) ,
             firstQuestionReplies: state[action.payload.id].firstQuestionReplies + 1,
             totalReplies: state[action.payload.id].totalReplies + 1
           }
@@ -28,7 +28,7 @@ export default function polls (state = {}, action) {
           ...state,
           [action.payload.id]: {
             ...state[action.payload.id],
-            isAnswered: true,   
+            answeredBy: state[action.payload.id].answeredBy.concat(action.payload.user.id),  
             secondQuestionReplies: state[action.payload.id].secondQuestionReplies + 1,
             totalReplies: state[action.payload.id].totalReplies + 1 
           }

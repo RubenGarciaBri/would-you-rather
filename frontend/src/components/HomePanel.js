@@ -33,8 +33,10 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
 }
 
 function mapStateToProps ({ authedUser, polls }) {
-  const answeredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => value.isAnswered === true))
-  const unansweredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => value.isAnswered === false))
+  const answeredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => value.answeredBy.includes(authedUser.id)))
+
+  const unansweredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => !value.answeredBy.includes(authedUser.id)))
+
 
   return {
     authedUser,

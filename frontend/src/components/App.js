@@ -16,16 +16,15 @@ const App = ({ authedUser, loading, dispatch }) => {
     dispatch(handleInitialData())
   }, [])
   
-
   return (
     <>   
-      <div className='App'>
-        <Route path='/' exact component={Login}/>
-        <Route path='/home' component={Home}/>
-        <Route path='/add' component={NewPoll}/>
-        <Route path='/leaderboard' component={Leaderboard}/>
-        <Route path='/questions/:id' component={PollPage} />
-      </div> 
+    <div className='App'>
+      <Route path='/' exact component={Login}/>
+      <Route path='/home' component={Home}/>
+      <Route path='/add' component={NewPoll}/>
+      <Route path='/leaderboard' component={Leaderboard}/>
+      <Route path='/questions/:id' component={PollPage} />
+    </div> 
     </>
   )
 }
