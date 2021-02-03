@@ -10,8 +10,8 @@ This is a modern version of the classic game "would you rather" where every user
 install dependencies
 $ npm install
 
-start client and server at the same time
-$ npm run dev
+start project (frontend and backend)
+$ npm start
 ```
 
 # Technologies and libraries

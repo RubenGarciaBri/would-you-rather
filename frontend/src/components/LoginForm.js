@@ -50,7 +50,7 @@ const LoginForm = ({ dispatch }) => {
   const handleChange = (e) => { 
     const target = e.target
 
-    // Get name and avatar from Select element
+    // Get name and avatar from select element
     const selectName = target.children[1].innerText
     const selectAvatar = target.children[0].currentSrc
 

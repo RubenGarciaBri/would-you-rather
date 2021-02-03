@@ -6,5 +6,4 @@ router.route('/').get(getUsers)
 router.route('/:userId').get(getUser)
 router.route('/').post(addUsers)
 
-
 export default router

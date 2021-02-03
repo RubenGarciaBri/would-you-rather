@@ -8,7 +8,7 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
 
   const handleClick = (e) => {
 
-    setActiveCategory(e.target.innerText.toLowerCase())
+  setActiveCategory(e.target.innerText.toLowerCase())
   }
 
 
@@ -20,6 +20,7 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
       </Button.Group>
       <div className='home-panel__list'>
         {
+          // Render polls depending on whether they've been answered or not by the user and pass their ids
           activeCategory === 'unanswered' ? unansweredPollIds.map((id) => {
             return <Poll key={id} id={id}/>
           }) :   
@@ -33,6 +34,7 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
 }
 
 function mapStateToProps ({ authedUser, polls }) {
+  // Filter polls by answered and unanswered by the authed user
   const answeredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => value.answeredBy.includes(authedUser.id)))
 
   const unansweredPolls = Object.fromEntries(Object.entries(polls).filter(([key, value]) => !value.answeredBy.includes(authedUser.id)))
@@ -40,8 +42,7 @@ function mapStateToProps ({ authedUser, polls }) {
 
   return {
     authedUser,
-    polls,
-    pollIds: Object.keys(polls),
+    // Extract the ids of both types of polls to map over in the UI
     answeredPollIds: Object.keys(answeredPolls),
     unansweredPollIds: Object.keys(unansweredPolls)
   }

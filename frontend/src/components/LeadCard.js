@@ -23,6 +23,7 @@ const LeadCard = ({user}) => {
 }
 
 function mapStateToProps({ users }, {id}) {
+  // Get the user
   const user = users[id] 
   
   return {

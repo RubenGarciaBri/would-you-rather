@@ -29,13 +29,13 @@ const Leaderboard = ({ authedUser, sortedUserIds}) => {
 }
 
 function mapStateToProps ({ authedUser, users }) {
+  // Sort users by their total points and get their name ids
   const sortedUsers = Object.fromEntries(Object.entries(users).sort((a, b) => b[1].points - a[1].points))
   const sortedUserIds = Object.keys(sortedUsers)
 
 
   return {
     authedUser,
-    users,
     sortedUserIds: sortedUserIds
   }
 }

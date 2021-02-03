@@ -9,15 +9,13 @@ import PollPage from '../screens/PollPage'
 import { setAuthedUser } from '../actions/authedUser'
 import { handleInitialData } from '../actions/shared'
 
-const App = ({ authedUser, loading, dispatch }) => {
-
-  // Set random avatar for easier development, REMOVE LATER!
+const App = ({ authedUser, dispatch }) => {
+  // Load initial data
   useEffect(() => {
     dispatch(handleInitialData())
   }, [])
   
   return (
-    <>   
     <div className='App'>
       <Route path='/' exact component={Login}/>
       <Route path='/home' component={Home}/>
@@ -25,7 +23,6 @@ const App = ({ authedUser, loading, dispatch }) => {
       <Route path='/leaderboard' component={Leaderboard}/>
       <Route path='/questions/:id' component={PollPage} />
     </div> 
-    </>
   )
 }
 

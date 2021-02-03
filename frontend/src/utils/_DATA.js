@@ -53,9 +53,7 @@ export async function _savePoll ({ firstQuestion, secondQuestion, author }) {
       firstQuestion,
       secondQuestion
     })
-
     res(formattedPoll)
-
   })
 }
 

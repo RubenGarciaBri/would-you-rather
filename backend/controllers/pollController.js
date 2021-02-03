@@ -9,7 +9,7 @@ let polls = {
     },
     firstQuestion: 'A powerful lion',
     secondQuestion: 'A cute dog',
-    answeredBy: ['Carol'],
+    answeredBy: [],
     firstQuestionReplies: 0,
     secondQuestionReplies: 1,
     totalReplies: 1

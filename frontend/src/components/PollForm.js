@@ -41,10 +41,9 @@ const PollForm = ({ dispatch, authedUser }) => {
   )
 }
 
-function mapStateToProps({ authedUser, polls }) {
+function mapStateToProps({ authedUser }) {
   return {
-    authedUser,
-    polls
+    authedUser
   }
 }
 

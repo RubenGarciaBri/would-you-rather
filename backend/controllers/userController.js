@@ -1,5 +1,3 @@
-// import { users } from '../data/users.js'
-
 export let users = {
   'Mike': {
     id: 'Mike',

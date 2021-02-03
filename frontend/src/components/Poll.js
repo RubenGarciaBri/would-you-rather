@@ -27,6 +27,7 @@ const Poll = ({ authedUser, poll }) => {
         <p className='poll__body-title'>Would you rather...</p>
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>    
+        {/* Show the correct button depending on whether the user has replied to this poll or not */}
         <Button onClick={handleClick} className='poll__body-btn'>{!answeredBy.includes(authedUser.id) ? 'Answer Poll' : 'See Results'}
         </Button>
       </div>

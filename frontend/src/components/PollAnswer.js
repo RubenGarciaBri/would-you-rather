@@ -32,7 +32,9 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
       </div>
       <div className='poll-answer__body'>
       <p className='poll-answer__body-title'>Would you rather...</p>
-      {!answeredBy.includes(authedUser.id) ? 
+      {
+      // Show the form if the poll hasn't been answered and the results if it has
+      !answeredBy.includes(authedUser.id) ? 
         <Form onSubmit={handleSubmit}className='poll-answer__body-form'>
         <Form.Group>
           <Form.Radio      
@@ -80,11 +82,11 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
 }
 
 function mapStateToProps({ authedUser, polls }, { id }) {
+  // Get the poll
   const poll = polls[id]
 
   return {
     authedUser,
-    polls,
     poll: poll
   }
 }
