@@ -22,13 +22,9 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
 
   return (
     <div className='poll-answer'>
-      <div className='poll-answer__head'>
-        <div className='poll-answer__head-left'>
-          <img src={author.avatar} className='poll-answer__head-left__img shadow-xs'/>
-        </div>
-        <div className='poll-answer__head-right'>
-          <span className='poll-answer__head-right__name'>{author.id}</span>
-        </div>
+      <div className='poll-answer__head'>     
+        <img src={author.avatar} className='poll-answer__head-img shadow-xs'/>
+        <span className='poll-answer__head-name'>{author.id}</span>
       </div>
       <div className='poll-answer__body'>
       <p className='poll-answer__body-title'>Would you rather...</p>
@@ -52,28 +48,28 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
             onChange={handleChange}
           />         
         </Form.Group>
-        <Form.Button className='poll-answer__body-btn'>Submit</Form.Button>
+        <Button className='poll-answer__body-btn'>Submit</Button>
         </Form>
         :
         <div>
-          <p>{firstQuestion}</p>
+          <p className='poll-answer__body-result__question'>{firstQuestion}</p>
           <Progress
             progress='percent'
             percent={(firstQuestionReplies / totalReplies ) * 100}
             success={option === firstQuestion ? true : false}
             size='large'
           />
-          <p className='poll-answer__body-result'>{firstQuestionReplies} out of {totalReplies} votes</p>
-          <p>{secondQuestion}</p>
+          <p className='poll-answer__body-result__score'>{firstQuestionReplies} out of {totalReplies} votes</p>
+          <p className='poll-answer__body-result__question'>{secondQuestion}</p>
           <Progress
           progress='percent'
           percent={(secondQuestionReplies / totalReplies ) * 100}
           success={option === secondQuestion ? true : false}
           size='large'
           />
-          <p className='poll-answer__body-result'>{secondQuestionReplies} out of {totalReplies} votes</p>
+          <p className='poll-answer__body-result__score'>{secondQuestionReplies} out of {totalReplies} votes</p>
           
-          <Link to='/home'><Button>Back</Button></Link>
+          <Link to='/home'><Button className='poll-answer__body-result__btn'>Back</Button></Link>
         </div> 
       }
       </div>

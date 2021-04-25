@@ -16,12 +16,8 @@ const Poll = ({ authedUser, poll }) => {
   return (
     <div className='poll'>
       <div className='poll__head'>
-        <div className='poll__head-left'>
-          <img src={author.avatar} className='poll__head-left__img shadow-xs'/>
-        </div>
-        <div className='poll__head-right'>
-          <span className='poll__head-right__name'>{author.id}</span>
-        </div>
+        <img src={author.avatar} className='poll__head-img shadow-xs'/>     
+        <span className='poll__head-name'>{author.id}</span>
       </div>
       <div className='poll__body'>
         <p className='poll__body-title'>Would you rather...</p>
