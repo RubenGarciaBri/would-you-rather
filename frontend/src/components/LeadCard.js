@@ -6,7 +6,7 @@ const LeadCard = ({user}) => {
   const { id, avatar, createdPolls, answeredPolls, points } = user
 
   return (
-    <div className='lead-card shadow-slim'>
+    <div className='lead-card shadow-smooth'>
       <div className='lead-card__left'>
         <img src={avatar} className='lead-card__left-img'/>
         <p className='lead-card__left-name'>{id}</p>

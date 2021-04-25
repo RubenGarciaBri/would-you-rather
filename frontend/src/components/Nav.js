@@ -61,7 +61,7 @@ const Nav = ({ authedUser, dispatch }) => {
         <div className='navbar__right'>
         <ul className='navbar__right-list'>
           <li className='navbar__right-list__item'>
-            <img src={authedUser.avatar} className='navbar__right-list__item-img'/>
+            <img src={authedUser.avatar} className='navbar__right-list__item-img shadow-slim'/>
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
           <li className='navbar__right-list__item'>

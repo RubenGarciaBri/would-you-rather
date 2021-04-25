@@ -1,4 +1,5 @@
 .lead-card {
+  font-family: 'Baloo 2', cursive;
   padding: 3rem 4rem;
   border-radius: 1rem;
   display: flex;
@@ -21,7 +22,9 @@
     }
 
     &-name {
+      font-family: inherit;
       font-size: 1.4rem;
+      font-weight: 700;
     }
   }
 
@@ -30,6 +33,7 @@
     padding-left: 5rem;
     
     &-questions {
+      font-family: inherit;
       font-size: 1.6rem;
       line-height: 1.5rem;
     }
@@ -40,8 +44,11 @@
     text-align: center;
 
     &-score {
+      font-family: inherit;
       font-size: 1.6rem;
-      font-weight: 800;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-primary)
     }
   }
 }
