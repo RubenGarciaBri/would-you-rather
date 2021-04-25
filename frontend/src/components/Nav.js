@@ -64,8 +64,12 @@ const Nav = ({ authedUser, dispatch }) => {
             <img src={authedUser.avatar} className='navbar__right-list__item-img'/>
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
-          <li className='navbar__right-list__item'><Button
-          onClick={handleLogout}><FaSignOutAlt/></Button>
+          <li className='navbar__right-list__item'>
+            <Button className='navbar__right-list__item-logout'
+            onClick={handleLogout}>
+              <FaSignOutAlt 
+              className='navbar__right-list__item-logout__icon' size={18}/>
+            </Button>
           </li>
         </ul>
         </div>
