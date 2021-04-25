@@ -1,6 +1,7 @@
 .home-panel {
   text-align: center;
   margin-top: 5rem;
+  
 
   &__list {
     display: flex;
@@ -11,8 +12,17 @@
 
 .ui.buttons.home-panel__btn-group {
   margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .ui.button.home-panel__btn-group__btn, .ui.button.home-panel__btn-group__or {
   font-size: 1.6rem;
+  background-color: #ccc;
+  color: #fff;
+
+  &--active {
+    background-color: var(--color-secondary); 
+  }
 }
+
+

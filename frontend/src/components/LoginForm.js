@@ -78,7 +78,7 @@ const LoginForm = ({ dispatch }) => {
   }
 
   return (
-    <div className='login-form align-center shadow-slim'>
+    <div className='login-form align-center'>
       <div className="login-form__container">
         <h3>Welcome to "Would you Rather"!</h3>
         <p>Select a user to start using the app</p>
@@ -90,7 +90,7 @@ const LoginForm = ({ dispatch }) => {
         /> :
         null
         }
-        <Button className='login-form__btn' onClick={handleClick}>Sign Up</Button>
+        <Button className='btn login-form__btn' onClick={handleClick}>Sign Up</Button>
       </div>
     </div>    
   )

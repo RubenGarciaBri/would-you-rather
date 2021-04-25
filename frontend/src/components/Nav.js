@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { Menu, Button, Container, Immage } from 'semantic-ui-react'
+import { Button} from 'semantic-ui-react'
+import { FaHome, FaSignOutAlt, FaTrophy } from "react-icons/fa";
+import { MdAddCircle } from "react-icons/md";
 
 import { removeAuthedUser } from '../actions/authedUser'
 
@@ -14,16 +16,45 @@ const Nav = ({ authedUser, dispatch }) => {
     history.push('/')
   }
 
+  const activeColor = '#1CB0F6'
+
   return (
     <nav className='navbar'>
       <div className='navbar__container main-container'>
         <div className='navbar__left'>
           <ul className='navbar__left-list'>
-            <li className='navbar__left-list__item active'><NavLink to='/home' activeClassName='active'>Home</NavLink>
+            <li className='navbar__left-list__item'>
+              <NavLink
+              to='/home'
+              activeStyle={{
+              color: activeColor,
+              opacity: 1
+              }}>
+                <FaHome size={24} className='navbar__left-list__item-icon'/>
+                <span>Home</span>              
+              </NavLink>
             </li>
-            <li className='navbar__left-list__item active'><NavLink to='/add'  activeClassName='active'>Create Poll</NavLink>
+            <li className='navbar__left-list__item'>
+              <NavLink
+              to='/add'
+              activeStyle={{
+                color: activeColor,
+                opacity: 1
+              }}>
+                <MdAddCircle size={24} className='navbar__left-list__item-icon'/>
+                <span>Create Poll</span>                
+              </NavLink>
             </li>
-            <li className='navbar__left-list__item active'><NavLink to='/leaderboard'  activeClassName='active'>Leaderboard</NavLink>
+            <li className='navbar__left-list__item'>
+              <NavLink
+              to='/leaderboard'
+              activeStyle={{
+                color: activeColor,
+                opacity: 1
+              }}>
+                <FaTrophy size={24} className='navbar__left-list__item-icon'/>
+                <span>Leaderboard</span>               
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -34,7 +65,7 @@ const Nav = ({ authedUser, dispatch }) => {
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
           <li className='navbar__right-list__item'><Button
-          onClick={handleLogout}>Logout</Button>
+          onClick={handleLogout}><FaSignOutAlt/></Button>
           </li>
         </ul>
         </div>

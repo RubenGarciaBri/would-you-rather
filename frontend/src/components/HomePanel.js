@@ -15,8 +15,8 @@ const HomePanel = ({  unansweredPollIds, answeredPollIds  }) => {
   return (
     <div className='home-panel main-container'>
       <Button.Group className='home-panel__btn-group'>
-        <Button onClick={handleClick}className={`home-panel__btn-group__btn ${activeCategory === 'unanswered' ? 'positive' : ''}`}>Unanswered</Button>
-        <Button onClick={handleClick} className={`home-panel__btn-group__btn ${activeCategory === 'answered' ? 'positive' : ''}`}>Answered</Button>
+        <Button onClick={handleClick}className={`home-panel__btn-group__btn ${activeCategory === 'unanswered' ? 'home-panel__btn-group__btn--active' : ''}`}>Unanswered</Button>
+        <Button onClick={handleClick} className={`home-panel__btn-group__btn  ${activeCategory === 'answered' ? 'home-panel__btn-group__btn--active' : ''}`}>Answered</Button>
       </Button.Group>
       <div className='home-panel__list'>
         {

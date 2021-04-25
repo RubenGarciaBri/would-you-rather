@@ -5,7 +5,18 @@
 }
 
 .ui.button {
-  font-sizE: 1.6rem;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 2rem 6rem;
+  border-radius: 1.8rem;
+  border-bottom-left-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  @include btn-transition;
+  
 }
 
 .ui.form {

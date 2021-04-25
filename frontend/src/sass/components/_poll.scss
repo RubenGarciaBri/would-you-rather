@@ -1,10 +1,10 @@
 .poll {
   width: 38.4rem;
-  background-color: #eee;
+  background-color: #fff;
   border-radius: 1rem;
 
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.12);
+  // border: 1px solid rgba(34,36,38,.15);
 
   &__head {
     display: flex;
@@ -52,5 +52,27 @@
 
 .ui.button.poll__body-btn {
   margin-top: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  background-color: var(--color-primary);
+  border-bottom: 4px solid var(--color-primary-dark);
+  padding: 1.7rem 4.9rem;
+
+  &:hover {
+    color: #fff!important;
+    background-color: var(--color-primary-light)!important;
+    border-bottom-color: var(--color-primary);
+  }
+
+  &:active {
+    background-color: var(--color-primary-light);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(2px);
+  }
+
+  &:focus {
+    color: #fff;
+    background-color: var(--color-primary);
+  }
+
 }

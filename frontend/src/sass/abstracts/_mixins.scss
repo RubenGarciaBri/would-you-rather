@@ -33,3 +33,11 @@
     ; // 1800px
   }
 }
+
+@mixin btn-transition {
+  transition: all 0.1s;
+}
+
+@mixin default-transition {
+  transition: all 0.2s;
+}
