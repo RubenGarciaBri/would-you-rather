@@ -14,7 +14,7 @@ const Poll = ({ authedUser, poll }) => {
   }
  
   return (
-    <div className='poll'>
+    <div className='poll shadow-smooth'>
       <div className='poll__head'>
         <img src={author.avatar} className='poll__head-img shadow-xs'/>     
         <span className='poll__head-name'>{author.id}</span>

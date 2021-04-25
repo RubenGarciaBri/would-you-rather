@@ -21,7 +21,7 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
   }
 
   return (
-    <div className='poll-answer'>
+    <div className='poll-answer shadow-smooth'>
       <div className='poll-answer__head'>     
         <img src={author.avatar} className='poll-answer__head-img shadow-xs'/>
         <span className='poll-answer__head-name'>{author.id}</span>

@@ -10,7 +10,7 @@ const NewPoll = ({ authedUser }) => {
       {authedUser !== null ?
       <>
         <Nav/>
-        <p className='new-poll__title main-container align-center'>Create New Poll</p>
+        <h1 className='new-poll__title main-container align-center'>Create New Poll</h1>
         <PollForm/>
       </>  
       : 
