@@ -7,6 +7,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2.4rem;
+
+    @include respond(tab-land) {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+
+    @include respond(tab-port) {
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
 

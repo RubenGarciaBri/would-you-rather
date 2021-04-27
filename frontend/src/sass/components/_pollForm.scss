@@ -4,6 +4,10 @@
   padding: 3.5rem 4.5rem;
   border-radius: 1rem;
 
+  @include respond(tab-port) {
+    width: 90%;
+  }
+
   &__form {
 
     &-title {
