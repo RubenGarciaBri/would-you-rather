@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
+import { toast } from 'react-toastify'
 
 const Poll = ({ authedUser, poll }) => {
   let history = useHistory();
@@ -10,7 +11,9 @@ const Poll = ({ authedUser, poll }) => {
   const { author, firstQuestion, secondQuestion, id, answeredBy} = poll
 
   const handleClick = () => {
+
     history.push(`questions/${id}`)
+    
   }
  
   return (
@@ -24,8 +27,15 @@ const Poll = ({ authedUser, poll }) => {
         <p className='poll__body-questions'>{firstQuestion}<br/>or... <br/>{secondQuestion}
         </p>    
         {/* Show the correct button depending on whether the user has replied to this poll or not */}
-        <Button onClick={handleClick} className='poll__body-btn'>{!answeredBy.includes(authedUser.id) ? 'Answer Poll' : 'See Results'}
-        </Button>
+        {authedUser.id === author.id 
+        ?
+          <Button onClick={handleClick} className='poll__body-btn--secondary'>
+            See Results
+          </Button>
+        : 
+          <Button onClick={handleClick} className={`${!answeredBy.includes(authedUser.id) ? 'poll__body-btn' : 'poll__body-btn--secondary'}`}>{!answeredBy.includes(authedUser.id) ? 'Answer Poll' : 'See Results'}
+          </Button>
+        }
       </div>
     </div>
   )
