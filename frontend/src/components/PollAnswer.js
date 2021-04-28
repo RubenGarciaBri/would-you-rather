@@ -41,7 +41,7 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
           <p className='poll-answer__body-result__question'>{firstQuestion}</p>
           <Progress
             progress='percent'
-            percent={(firstQuestionReplies / totalReplies ) * 100}
+            percent={((firstQuestionReplies / totalReplies ) * 100).toFixed(0)}
             success={option === firstQuestion ? true : false}
             size='large'
           />
@@ -49,7 +49,7 @@ const PollAnswer = ({ poll, authedUser, dispatch }) => {
           <p className='poll-answer__body-result__question'>{secondQuestion}</p>
           <Progress
           progress='percent'
-          percent={(secondQuestionReplies / totalReplies ) * 100}
+          percent={((secondQuestionReplies / totalReplies ) * 100).toFixed(0)}
           success={option === secondQuestion ? true : false}
           size='large'
           />

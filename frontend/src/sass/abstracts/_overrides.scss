@@ -36,3 +36,7 @@
 .ui.checkbox input.hidden+label {
   font-size: 1.6rem;
 }
+
+.ui.progress.success .bar {
+  background-color: var(--color-primary) !important;
+}
