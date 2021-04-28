@@ -59,7 +59,7 @@ export async function _savePoll ({ firstQuestion, secondQuestion, author }) {
 
 export const _getUsers = async () => {
   try {
-    const res = await axios.get('http://localhost:5000/api/users')
+    const res = await axios.get('/api/users')
     return res.data
   }
   catch(err) {
@@ -69,7 +69,7 @@ export const _getUsers = async () => {
 
 export const _getPolls = async () => {
   try {
-    const res = await axios.get('http://localhost:5000/api/polls')
+    const res = await axios.get('/api/polls')
     return res.data
   }
   catch(err) {

@@ -72,7 +72,7 @@ export function handleAnswerPoll(id, option) {
 const savePolls = () => async (dispatch, getState) => {
   const polls = getState().polls
 
-   return await axios.post('http://localhost:5000/api/polls', polls)
+   return await axios.post('/api/polls', polls)
     .then((res) => {
       dispatch({
         type: SAVE_POLLS,
@@ -86,7 +86,7 @@ const savePolls = () => async (dispatch, getState) => {
 const saveUsers = () => async (dispatch, getState) => {
   const users = getState().users
 
-   return await axios.post('http://localhost:5000/api/users', users)
+   return await axios.post('/api/users', users)
     .then((res) => {
       dispatch({
         type: SAVE_USERS,
