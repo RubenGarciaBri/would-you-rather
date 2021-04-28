@@ -8,6 +8,7 @@ import Leaderboard from '../screens/Leaderboard'
 import PollPage from '../screens/PollPage'
 import { setAuthedUser } from '../actions/authedUser'
 import { handleInitialData } from '../actions/shared'
+import { ToastContainer } from 'react-toastify'
 
 const App = ({ authedUser, dispatch }) => {
   // Load initial data
@@ -22,6 +23,7 @@ const App = ({ authedUser, dispatch }) => {
       <Route path='/add' component={NewPoll}/>
       <Route path='/leaderboard' component={Leaderboard}/>
       <Route path='/questions/:id' component={PollPage} />
+      <ToastContainer limit={7} position='bottom-right' autoClose={2000} hideProgressBar={true} pauseOnHover />
     </div> 
   )
 }
