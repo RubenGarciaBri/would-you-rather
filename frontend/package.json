@@ -10,7 +10,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
@@ -31,8 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
