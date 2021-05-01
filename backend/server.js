@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import pollRoutes from './routes/pollRoutes.js'
 import userRoutes from './routes/userRoutes.js'
-
+import * as path from 'path'
 const app = express()
 
 app.use(express.json())
@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
 
   // Express serve up index.html file if it doesn't recognize route
-  const path = require('path');
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   });
