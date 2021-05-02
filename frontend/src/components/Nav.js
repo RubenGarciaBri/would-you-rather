@@ -76,7 +76,7 @@ const Nav = ({ authedUser, dispatch }) => {
         <div className='navbar__right'>
         <ul className='navbar__right-list'>
           <li className='navbar__right-list__item'>
-            <img src={authedUser.avatar} className='navbar__right-list__item-img shadow-slim'/>
+            <img src={authedUser.avatar} alt="Logged user's avatar" className='navbar__right-list__item-img shadow-slim'/>
             <span className='navbar__right-list__item-name'>{authedUser.id}</span>
           </li>
           <li className='navbar__right-list__item'>
@@ -88,7 +88,7 @@ const Nav = ({ authedUser, dispatch }) => {
           </li>
         </ul>
         </div>
-        <img src={authedUser.avatar} className='bars-userImg shadow-slim'/>
+        <img src={authedUser.avatar} alt="Logged user's avatar" className='bars-userImg shadow-slim'/>
         <FaBars size={20} className="bars" onClick={onBarsClick}/>     
         {activeSideMenu === true 
         ?

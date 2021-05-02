@@ -8,7 +8,7 @@ const LeadCard = ({user}) => {
   return (
     <div className='lead-card shadow-smooth'>
       <div className='lead-card__left'>
-        <img src={avatar} className='lead-card__left-img'/>
+        <img src={avatar} alt="User avatar" className='lead-card__left-img'/>
         <p className='lead-card__left-name'>{id}</p>
       </div>
       <div className='lead-card__center'>
