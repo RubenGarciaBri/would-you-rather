@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Button} from 'semantic-ui-react'
 import { FaHome, FaSignOutAlt, FaTrophy, FaBars } from "react-icons/fa"
 import { MdAddCircle } from "react-icons/md"
-import { Menu } from 'semantic-ui-react'
 import { useOutsideClick } from '../utils/helpers'
 import { removeAuthedUser } from '../actions/authedUser'
 

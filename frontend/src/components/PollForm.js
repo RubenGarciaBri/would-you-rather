@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Checkbox, Button } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleAddPoll } from '../actions/polls'
 import { toast } from 'react-toastify'
 
-const PollForm = ({ dispatch, authedUser }) => {
+const PollForm = ({ dispatch }) => {
   const [firstQuestion, setFirstQuestion] = useState('')
   const [secondQuestion, setSecondQuestion] = useState('')
   const [firstQuestionError, setFirstQuestionError] = useState(false)

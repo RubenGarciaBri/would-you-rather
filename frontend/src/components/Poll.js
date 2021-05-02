@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
-import { toast } from 'react-toastify'
 
 const Poll = ({ authedUser, poll }) => {
   let history = useHistory();

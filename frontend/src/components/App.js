@@ -6,11 +6,10 @@ import Home from '../screens/Home'
 import NewPoll from '../screens/NewPoll'
 import Leaderboard from '../screens/Leaderboard'
 import PollPage from '../screens/PollPage'
-import { setAuthedUser } from '../actions/authedUser'
 import { handleInitialData } from '../actions/shared'
 import { ToastContainer } from 'react-toastify'
 
-const App = ({ authedUser, dispatch }) => {
+const App = ({ dispatch }) => {
   // Load initial data
   useEffect(() => {
     dispatch(handleInitialData())
