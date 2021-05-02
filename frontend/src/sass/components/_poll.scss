@@ -3,6 +3,10 @@
   background-color: #fff;
   border-radius: 1rem;
   margin: 2.4rem;
+
+  @include respond(phone) {
+    margin: 2.4rem 0;
+  }
   
   &__head {
     display: flex;

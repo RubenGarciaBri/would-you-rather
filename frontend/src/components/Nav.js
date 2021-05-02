@@ -89,7 +89,7 @@ const Nav = ({ authedUser, dispatch }) => {
         </ul>
         </div>
         <img src={authedUser.avatar} className='bars-userImg shadow-slim'/>
-        <FaBars className="bars" onClick={onBarsClick}/>     
+        <FaBars size={20} className="bars" onClick={onBarsClick}/>     
         {activeSideMenu === true 
         ?
           <ul ref={node} className='sideNav shadow-slim'>
