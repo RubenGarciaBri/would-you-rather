@@ -129,7 +129,7 @@ const Nav = ({ authedUser, dispatch }) => {
             <li className='sideNav__item'>
               <a className='sideNav__item-logout' onClick={handleLogout}>
                 <FaSignOutAlt size={24} className='sideNav__item-icon'/>
-                <span>Sign Out</span>               
+                <span>Log Out</span>               
               </a>
             </li>
           </ul>
