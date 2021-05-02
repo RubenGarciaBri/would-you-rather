@@ -6,7 +6,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.4rem;
+
 
     @include respond(tab-land) {
       max-width: 80rem;
