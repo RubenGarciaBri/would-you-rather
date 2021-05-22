@@ -1,12 +1,32 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import LoginForm from '../components/LoginForm'
 
-const Login = () => {
+const Login = ({ authedUser }) => {
+  let history = useHistory();
+
+  if (authedUser !== null) {
+    history.push('/home')
+  }
+
   return (
-    <div className="login-page">
-      <LoginForm />
-    </div>
+    <>
+      {authedUser !== null ?
+        null
+      : 
+      <div className="login-page">
+        <LoginForm />
+      </div>
+      }
+    </>
   )
 }
 
-export default Login
+function mapStateToProps ({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(Login)
