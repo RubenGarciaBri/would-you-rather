@@ -13,7 +13,7 @@ const App = ({ dispatch }) => {
   // Load initial data
   useEffect(() => {
     dispatch(handleInitialData())
-  }, [])
+  })
   
   return (
     <div className='App'>

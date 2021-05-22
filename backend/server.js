@@ -4,6 +4,12 @@ import cors from 'cors'
 import pollRoutes from './routes/pollRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import * as path from 'path'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express()
 
 app.use(express.json())
@@ -19,7 +25,7 @@ app.use('/api/users', userRoutes)
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`))
 
 if (process.env.NODE_ENV === 'production') {
-  // Exprees will serve up production assets
+  // Express will serve up production assets
   app.use(express.static('frontend/build'));
 
   // Express serve up index.html file if it doesn't recognize route
