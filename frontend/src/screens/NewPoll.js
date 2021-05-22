@@ -7,22 +7,24 @@ import ErrorMessage from '../components/ErrorMessage'
 const NewPoll = ({ authedUser }) => {
   return (
     <>
-      {authedUser !== null ?
-      <>
-        <Nav/>
-        <h1 className='new-poll__title main-container align-center'>Create New Poll</h1>
-        <PollForm/>
-      </>  
-      : 
-        <ErrorMessage/>
-      }  
+      {authedUser !== null ? (
+        <>
+          <Nav />
+          <h1 className="new-poll__title main-container align-center">
+            Create New Poll
+          </h1>
+          <PollForm />
+        </>
+      ) : (
+        <ErrorMessage />
+      )}
     </>
   )
 }
 
 function mapStateToProps({ authedUser }) {
   return {
-    authedUser
+    authedUser,
   }
 }
 

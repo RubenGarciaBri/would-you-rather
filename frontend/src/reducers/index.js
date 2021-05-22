@@ -16,7 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   authedUser,
   users,
-  polls
+  polls,
 })
 
 export default persistReducer(persistConfig, rootReducer)
