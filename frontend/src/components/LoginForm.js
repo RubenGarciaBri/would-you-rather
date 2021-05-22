@@ -3,53 +3,48 @@ import { Select, Button, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
-import { users } from '../utils/_DATA'
 
-const formUsers = [
-  {
-    text: users['Mike'].id,
-    value: users['Mike'].id,
-    image: {
-      avatar: true,
-      src: users['Mike'].avatar
-    }
-  },
-  {
-    text: users['Carol'].id,
-    value: users['Carol'].id,
-    image: {
-      avatar: true,
-      src: users['Carol'].avatar
-    }
-  },
-  {
-    text: users['Jennifer'].id,
-    value: users['Jennifer'].id,
-    image: {
-      avatar: true,
-      src: users['Jennifer'].avatar
-    }
-  },
-  {
-    text: users['Victor'].id,
-    value: users['Victor'].id,
-    image: {
-      avatar: true,
-      src: users['Victor'].avatar
-    }
-  }
-]
-
-const LoginForm = ({ dispatch }) => {
+const LoginForm = ({ dispatch, users }) => {
   const [user, setUser] = useState('')
   const [avatar, setAvatar] = useState('')
   const [submitFailed, setSubmitFailed] = useState(false)
 
   let history = useHistory()
 
-  useEffect(() => {
-    
-  }, [])  
+  const formUsers = [
+    {
+      text: users['Mike'].id,
+      value: users['Mike'].id,
+      image: {
+        avatar: true,
+        src: users['Mike'].avatar
+      }
+    },
+    {
+      text: users['Carol'].id,
+      value: users['Carol'].id,
+      image: {
+        avatar: true,
+        src: users['Carol'].avatar
+      }
+    },
+    {
+      text: users['Jennifer'].id,
+      value: users['Jennifer'].id,
+      image: {
+        avatar: true,
+        src: users['Jennifer'].avatar
+      }
+    },
+    {
+      text: users['Victor'].id,
+      value: users['Victor'].id,
+      image: {
+        avatar: true,
+        src: users['Victor'].avatar
+      }
+    }
+  ]
 
   const handleChange = (e) => { 
     const target = e.target
@@ -100,9 +95,10 @@ const LoginForm = ({ dispatch }) => {
   )
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({ authedUser, users }) {
   return {
-    authedUser
+    authedUser,
+    users
   }
 }
 
