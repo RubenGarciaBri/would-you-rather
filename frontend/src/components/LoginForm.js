@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Select, Button, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -45,7 +45,11 @@ const LoginForm = ({ dispatch }) => {
   const [avatar, setAvatar] = useState('')
   const [submitFailed, setSubmitFailed] = useState(false)
 
-  let history = useHistory();
+  let history = useHistory()
+
+  useEffect(() => {
+    
+  }, [])  
 
   const handleChange = (e) => { 
     const target = e.target
