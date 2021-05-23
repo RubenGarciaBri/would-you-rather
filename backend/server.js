@@ -26,11 +26,11 @@ app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} on port 
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
-  app.use(express.static('frontend/build'));
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 
   // Express serve up index.html file if it doesn't recognize route
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+    res.sendFile(path.join(__dirname + '/../frontend/build/index.html'));
   });
 }
 
