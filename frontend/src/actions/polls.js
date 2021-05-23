@@ -1,3 +1,4 @@
+
 import { savePoll } from '../utils/api'
 import { addNewPollToUser, addAnsweredPollToUser } from '../actions/users'
 import axios from 'axios'
@@ -12,19 +13,20 @@ export function receivePolls(polls) {
   return {
     type: RECEIVE_POLLS,
     payload: {
-      polls,
-    },
+      polls
+    }
   }
 }
 
 function addPoll(poll) {
   return {
-    type: ADD_POLL,
+    type:  ADD_POLL,
     payload: {
-      poll,
-    },
+      poll
+    }
   }
 }
+
 
 function answerPoll(id, user, option) {
   return {
@@ -32,10 +34,11 @@ function answerPoll(id, user, option) {
     payload: {
       id,
       user,
-      option,
-    },
+      option
+    }
   }
 }
+
 
 export function handleAddPoll(firstQuestion, secondQuestion) {
   return (dispatch, getState) => {
@@ -44,8 +47,9 @@ export function handleAddPoll(firstQuestion, secondQuestion) {
     return savePoll({
       author: authedUser,
       firstQuestion,
-      secondQuestion,
-    }).then((poll) => {
+      secondQuestion
+    })
+    .then((poll) => {
       dispatch(addPoll(poll))
       dispatch(addNewPollToUser(poll.author, poll.id))
       dispatch(savePolls())
@@ -68,25 +72,27 @@ export function handleAnswerPoll(id, option) {
 const savePolls = () => async (dispatch, getState) => {
   const polls = getState().polls
 
-  return await axios.post('/api/polls', polls).then((res) => {
-    dispatch({
-      type: SAVE_POLLS,
-      payload: {
-        polls: res.data,
-      },
+   return await axios.post('/api/polls', polls)
+    .then((res) => {
+      dispatch({
+        type: SAVE_POLLS,
+        payload: {
+          polls: res.data
+        }
+      })
     })
-  })
 }
 
 const saveUsers = () => async (dispatch, getState) => {
   const users = getState().users
 
-  return await axios.post('/api/users', users).then((res) => {
-    dispatch({
-      type: SAVE_USERS,
-      payload: {
-        users: res.data,
-      },
+   return await axios.post('/api/users', users)
+    .then((res) => {
+      dispatch({
+        type: SAVE_USERS,
+        payload: {
+          users: res.data
+        }
+      })
     })
-  })
 }

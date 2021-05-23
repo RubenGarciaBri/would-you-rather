@@ -6,13 +6,13 @@ export function setAuthedUser(id, avatar) {
     type: SET_AUTHED_USER,
     payload: {
       id,
-      avatar,
-    },
+      avatar
+    }
   }
 }
 
 export function removeAuthedUser() {
   return {
-    type: REMOVE_AUTHED_USER,
+    type: REMOVE_AUTHED_USER
   }
 }

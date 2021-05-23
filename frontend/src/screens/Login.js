@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import LoginForm from '../components/LoginForm'
 
 const Login = ({ authedUser }) => {
-  let history = useHistory()
+  let history = useHistory();
 
   if (authedUser !== null) {
     history.push('/home')
@@ -12,18 +12,20 @@ const Login = ({ authedUser }) => {
 
   return (
     <>
-      {authedUser !== null ? null : (
-        <div className="login-page">
-          <LoginForm />
-        </div>
-      )}
+      {authedUser !== null ?
+        null
+      : 
+      <div className="login-page">
+        <LoginForm />
+      </div>
+      }
     </>
   )
 }
 
-function mapStateToProps({ authedUser }) {
+function mapStateToProps ({ authedUser }) {
   return {
-    authedUser,
+    authedUser
   }
 }
 

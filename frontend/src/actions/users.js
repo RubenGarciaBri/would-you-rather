@@ -6,8 +6,8 @@ export function receiveUsers(users) {
   return {
     type: RECEIVE_USERS,
     payload: {
-      users,
-    },
+      users
+    }  
   }
 }
 
@@ -16,8 +16,8 @@ export function addNewPollToUser(user, pollId) {
     type: ADD_NEW_POLL_TO_USER,
     payload: {
       user,
-      pollId,
-    },
+      pollId
+    }  
   }
 }
 
@@ -26,7 +26,7 @@ export function addAnsweredPollToUser(user, pollId) {
     type: ADD_ANSWERED_POLL_TO_USER,
     payload: {
       user,
-      pollId,
-    },
+      pollId
+    }  
   }
 }

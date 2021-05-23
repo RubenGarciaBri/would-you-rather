@@ -5,23 +5,24 @@ import HomePanel from '../components/HomePanel'
 import ErrorMessage from '../components/ErrorMessage'
 
 const Home = ({ authedUser }) => {
+ 
   return (
     <>
-      {authedUser !== null ? (
-        <>
-          <Nav />
-          <HomePanel />
-        </>
-      ) : (
-        <ErrorMessage />
-      )}
+      {authedUser !== null ?
+      <>
+        <Nav />
+        <HomePanel />
+      </>  
+      : 
+      <ErrorMessage/>
+      }  
     </>
   )
 }
 
 function mapStateToProps({ authedUser }) {
   return {
-    authedUser,
+    authedUser
   }
 }
 
