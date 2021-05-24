@@ -39,7 +39,7 @@
     @include respond(phone) {
       flex: 4;
     }
-    
+
     &-questions {
       font-family: inherit;
       font-size: 1.6rem;
@@ -56,7 +56,7 @@
       font-size: 1.6rem;
       font-weight: 700;
       text-transform: uppercase;
-      color: var(--color-primary)
+      color: var(--color-primary);
     }
   }
 }

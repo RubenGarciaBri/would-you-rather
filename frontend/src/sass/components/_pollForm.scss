@@ -9,7 +9,6 @@
   }
 
   &__form {
-
     &-title {
       font-family: 'Baloo 2', cursive;
       font-size: 2rem;
@@ -25,9 +24,8 @@
     }
 
     &-input {
-      font-family: 'Baloo 2', cursive!important;
+      font-family: 'Baloo 2', cursive !important;
     }
-
   }
 }
 
@@ -39,8 +37,8 @@
   padding: 1.7rem 4.9rem;
 
   &:hover {
-    color: #fff!important;
-    background-color: var(--color-primary-light)!important;
+    color: #fff !important;
+    background-color: var(--color-primary-light) !important;
     border-bottom-color: var(--color-primary);
   }
 

@@ -1,8 +1,7 @@
-import { generateId } from '../utils/helpers'
-import axios from 'axios'
+import { generateId } from '../utils/helpers';
+import axios from 'axios';
 
-
-function formatPoll ({ firstQuestion, secondQuestion, author }) {
+function formatPoll({ firstQuestion, secondQuestion, author }) {
   return {
     author,
     id: generateId(),
@@ -11,37 +10,35 @@ function formatPoll ({ firstQuestion, secondQuestion, author }) {
     answeredBy: [],
     firstQuestionReplies: 0,
     secondQuestionReplies: 0,
-    totalReplies: 0
-  }
+    totalReplies: 0,
+  };
 }
 
-export async function _savePoll ({ firstQuestion, secondQuestion, author }) {
+export async function _savePoll({ firstQuestion, secondQuestion, author }) {
   return new Promise((res, rej) => {
     const formattedPoll = formatPoll({
       author,
       firstQuestion,
-      secondQuestion
-    })
-    res(formattedPoll)
-  })
+      secondQuestion,
+    });
+    res(formattedPoll);
+  });
 }
 
 export const _getUsers = async () => {
   try {
-    const res = await axios.get('/api/users')
-    return res.data
+    const res = await axios.get('/api/users');
+    return res.data;
+  } catch (err) {
+    console.log(err);
   }
-  catch(err) {
-    console.log(err)
-  }
-}
+};
 
 export const _getPolls = async () => {
   try {
-    const res = await axios.get('/api/polls')
-    return res.data
+    const res = await axios.get('/api/polls');
+    return res.data;
+  } catch (err) {
+    console.log(err);
   }
-  catch(err) {
-    console.log(err)
-  }
-}
+};

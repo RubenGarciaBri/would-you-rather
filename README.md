@@ -25,12 +25,13 @@ $ npm start
 
 # App features
 
-1. User login and logout functionality 
+1. User login and logout functionality
 1. Create polls
 1. Answer polls
 1. Leaderboard
 1. Poll categories
 
 # Author
-* **Ruben Garcia Bri** - 
-[Github](https://github.com/RubenGarcia7)
+
+- **Ruben Garcia Bri** -
+  [Github](https://github.com/RubenGarcia7)

@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid'
-import { useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
 
 export function generateId() {
-  return uuidv4()
+  return uuidv4();
 }
 
 export const useOutsideClick = (ref, callback) => {
@@ -13,10 +13,10 @@ export const useOutsideClick = (ref, callback) => {
   };
 
   useEffect(() => {
-    document.addEventListener("click", handleClick);
+    document.addEventListener('click', handleClick);
 
     return () => {
-      document.removeEventListener("click", handleClick);
+      document.removeEventListener('click', handleClick);
     };
   });
 };

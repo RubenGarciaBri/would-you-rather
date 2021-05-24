@@ -21,26 +21,25 @@
 
 .ui.buttons.home-panel__btn-group {
   margin-bottom: 2.5rem;
-  overflow: hidden;  
+  overflow: hidden;
 
   @include respond(phone) {
     flex-direction: column;
   }
 }
 
-.ui.button.home-panel__btn-group__btn, .ui.button.home-panel__btn-group__or {
+.ui.button.home-panel__btn-group__btn,
+.ui.button.home-panel__btn-group__or {
   font-size: 1.6rem;
   background-color: #ccc;
   color: #fff;
-  margin: 0 .6rem;
+  margin: 0 0.6rem;
 
   @include respond(phone) {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 
   &--active {
-    background-color: var(--color-secondary); 
+    background-color: var(--color-secondary);
   }
 }
-
-

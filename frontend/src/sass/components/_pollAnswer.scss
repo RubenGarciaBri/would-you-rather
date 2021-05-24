@@ -1,9 +1,8 @@
-.poll-answer  {
+.poll-answer {
   width: 38.4rem;
   margin: 5rem auto 0 auto;
   background-color: #fff;
   border-radius: 1rem;
-
 
   &__head {
     display: flex;
@@ -23,7 +22,7 @@
     }
   }
 
-  &__body  {
+  &__body {
     font-size: 1.6rem;
     text-align: left;
     padding: 0 4rem 2.5rem 4rem;
@@ -35,11 +34,9 @@
     }
 
     &-form {
-
     }
 
     &-result {
-      
       &__question {
         font-size: 1.6rem;
       }
@@ -63,8 +60,8 @@
   padding: 1.7rem 4.9rem;
 
   &:hover {
-    color: #fff!important;
-    background-color: var(--color-primary-light)!important;
+    color: #fff !important;
+    background-color: var(--color-primary-light) !important;
     border-bottom-color: var(--color-primary);
   }
 
@@ -89,8 +86,8 @@
   padding: 1.7rem 4.9rem;
 
   &:hover {
-    color: #fff!important;
-    background-color: var(--color-secondary-light)!important;
+    color: #fff !important;
+    background-color: var(--color-secondary-light) !important;
     border-bottom-color: var(--color-secondary);
   }
 
@@ -107,7 +104,7 @@
   }
 }
 
-.ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio].poll-answer__body-form__option {
-  display: block
+.ui.checkbox input[type='checkbox'],
+.ui.checkbox input[type='radio'].poll-answer__body-form__option {
+  display: block;
 }
-
