@@ -147,7 +147,7 @@ const Nav = ({ authedUser, dispatch }) => {
               </NavLink>
             </li>
             <li className="sideNav__item">
-              <a className="sideNav__item-logout" onClick={handleLogout}>
+              <a className="sideNav__item-logout" href="#!" onClick={handleLogout}>
                 <FaSignOutAlt size={24} className="sideNav__item-icon" />
                 <span>Log Out</span>
               </a>
