@@ -1,7 +1,6 @@
 import { savePoll } from '../utils/api';
 import { addNewPollToUser, addAnsweredPollToUser } from '../actions/users';
 import axios from 'axios';
-
 export const RECEIVE_POLLS = 'RECEIVE_POLLS';
 export const ADD_POLL = 'ADD_POLL';
 export const ANSWER_POLL = 'ANSWER_POLL';

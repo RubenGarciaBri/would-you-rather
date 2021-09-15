@@ -1,11 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import pollRoutes from './routes/pollRoutes.js';
-import userRoutes from './routes/userRoutes.js';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import pollRoutes from './routes/pollRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
